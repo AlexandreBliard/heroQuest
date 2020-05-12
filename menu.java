@@ -7,7 +7,7 @@ class Menu {
         System.out.println("constructeur ok");
     }
 
-    public void chooseYourCharacter() {
+    public Object chooseYourCharacter() {
         System.out.println("bonjour à toi " +
                 "aventurier, mes yeux sont " +
                 "fatigués et je ne vois plus " +
@@ -22,9 +22,11 @@ class Menu {
             String classePJ = sc.nextLine();
             if (classePJ.equals("GUERRIER") ) {
                 Warrior warrior = createWarrior(classePJ);
+                return warrior;
                 enigme = true;
             }else if (classePJ.equals("MAGICIEN")){
                 Wizard wizard = createWizard(classePJ);
+                return wizard;
                 enigme = true;
             }else if (classePJ.equals("guerrier")  /*|| "magicien"*/) {
                 System.out.println("je t'entend mal " +
