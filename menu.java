@@ -29,12 +29,12 @@ class Menu {
                 aventurier = createWizard(classePJ);
                 enigme = true;
                 return aventurier;
-            }else if (classePJ.equals("guerrier")  /**/) {
+            }else if (classePJ.equals("guerrier") || classePJ.equals("magicien")) {
                 System.out.println("je t'entend mal " +
                         "jeune "+ classePJ);
             }else {
                 System.out.println("je ne suis pas " +
-                        "sur de ta réponse");
+                        "sur de bien comprendre");
             }
         } while (!enigme);
 
