@@ -7,13 +7,14 @@ class Menu {
         System.out.println("constructeur ok");
     }
 
-    public Object chooseYourCharacter() {
+    public CommunPeople chooseYourCharacter() {
         System.out.println("bonjour à toi " +
                 "aventurier, mes yeux sont " +
                 "fatigués et je ne vois plus " +
                 "très bien, es-tu un intrépide " +
                 "guerrier ou un rusé magicien ?");
         Scanner sc = new Scanner(System.in);
+        CommunPeople aventurier = null;
         boolean enigme = false;
         do {
             System.out.println("dites au sage si " +
@@ -21,28 +22,32 @@ class Menu {
                     "ou un magicien");
             String classePJ = sc.nextLine();
             if (classePJ.equals("GUERRIER") ) {
-                Warrior warrior = createWarrior(classePJ);
-                return warrior;
+                aventurier = createWarrior(classePJ);
                 enigme = true;
+                return aventurier;
             }else if (classePJ.equals("MAGICIEN")){
-                Wizard wizard = createWizard(classePJ);
-                return wizard;
+                aventurier = createWizard(classePJ);
                 enigme = true;
-            }else if (classePJ.equals("guerrier")  /*|| "magicien"*/) {
+                return aventurier;
+            }else if (classePJ.equals("guerrier")  /**/) {
                 System.out.println("je t'entend mal " +
                         "jeune "+ classePJ);
             }else {
                 System.out.println("je ne suis pas " +
                         "sur de ta réponse");
             }
-        } while (enigme == false);
+        } while (!enigme);
 
-        System.out.println("je te salue vaillant héros "  +
+        System.out.println(
+                "je te salue vaillant aventurier "  +
                 "derrière moi se trouve " +
                 "l'entrée d'une grotte " +
                 "qui contient le sceptre de " +
                 "feu. Ramène le moi et je " +
-                "te promet une juste récompense ");
+                "te promet une juste récompense "
+        );
+
+        return aventurier;
     }
     public Warrior createWarrior(String classePJ) {
         System.out.println("dis moi " + classePJ +

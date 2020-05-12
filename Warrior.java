@@ -2,11 +2,7 @@ package com.heroQuest;
 
 import java.util.Scanner;
 
-public class Warrior {
-
-    public String name;
-    public int life;
-    public int attack;
+public class Warrior extends CommunPeople{
 
     public Warrior() {
         /*constructeur ss para*/

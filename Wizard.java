@@ -2,17 +2,15 @@ package com.heroQuest;
 
 import java.util.Scanner;
 
-public class Wizard {
+public class Wizard extends CommunPeople{
 
-    public String name;
-    public int life;
-    public int attack;
 
     public Wizard() {
         /*constructeur ss para*/
     }
     public Wizard(String nameC) {
         this.name=nameC;
+        //constructeur avec 1 para
     }
     public Wizard(String nameC, int lifeC,
                    int attackC) {
