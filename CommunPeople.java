@@ -8,7 +8,7 @@ public class CommunPeople {
 
     public String toString() {
         return "tu te nommes " + name +
-                "tu possèdes " + life + "points de vie "
-                + "tu fais " + attack + "point de dégâts";
+                " tu possèdes " + life + " points de vie "
+                + "tu fais " + attack + " point de dégâts";
     }
 }
