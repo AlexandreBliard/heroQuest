@@ -8,12 +8,12 @@ public class Warrior extends CommunPeople{
         /*constructeur ss para*/
         this.name = "";
         this.life = 5;
-        this.attack = 8;
+        this.attack = 5;
     }
     public Warrior(String nameC) {
         this.name=nameC;
         this.life = 5;
-        this.attack = 8;
+        this.attack = 5;
     }
     public Warrior(String nameC, int lifeC,
                    int attackC) {

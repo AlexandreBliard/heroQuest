@@ -78,10 +78,10 @@ public class Menu {
         System.out.println("si tu veux " +
                 "partir de la caverne " +
                 "tape partir");
-        System.out.println("si tu veux continuer" +
-                "ton aventure tape continuer");
         System.out.println("si tu veux changer" +
                 "ton nom tape nom");
+        System.out.println("si tu veux continuer" +
+                "ton aventure tape continuer");
         boolean choix = false;
         do {
             Scanner sc = new Scanner(System.in);
@@ -90,10 +90,6 @@ public class Menu {
                 System.out.println(aventurier);
             }else if (inputChooseSPR.equals("partir")) {
                 leave.leaveCavern();
-            }else if (inputChooseSPR.equals("continuer")) {
-                /*mettre ici un code qui retourne à l'état
-                * précédent*/
-                choix = true;
             }else if (inputChooseSPR.equals("nom")) {
                 System.out.println("quel nom veux-tu " +
                         "prendre ?");
@@ -102,8 +98,11 @@ public class Menu {
                 aventurier.setName(sc.nextLine());
                 System.out.println("bienvenue à toi " +
                         aventurier.getName());
-
-            };
+            }else if (inputChooseSPR.equals("continuer")) {
+                /*mettre ici un code qui retourne à l'état
+                * précédent*/
+                choix = true;
+            }
         }while (!choix);
     }
 }

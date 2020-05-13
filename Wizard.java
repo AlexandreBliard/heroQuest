@@ -8,12 +8,12 @@ public class Wizard extends CommunPeople{
     public Wizard() {
         /*constructeur ss para*/
         this.name = "";
-        this.life = 5;
+        this.life = 3;
         this.attack = 8;
     }
     public Wizard(String nameC) {
         this.name=nameC;
-        this.life = 5;
+        this.life = 3;
         this.attack = 8;
         //constructeur avec 1 para
     }
