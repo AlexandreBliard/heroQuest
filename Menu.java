@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Menu {
 
     public Menu() {
-        System.out.println("constructeur ok");
+
     }
 
     public CommunPeople chooseYourCharacter() {
