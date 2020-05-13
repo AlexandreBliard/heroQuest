@@ -80,6 +80,8 @@ public class Menu {
                 "tape partir");
         System.out.println("si tu veux continuer" +
                 "ton aventure tape continuer");
+        System.out.println("si tu veux changer" +
+                "ton nom tape nom");
         boolean choix = false;
         do {
             Scanner sc = new Scanner(System.in);
@@ -92,7 +94,16 @@ public class Menu {
                 /*mettre ici un code qui retourne à l'état
                 * précédent*/
                 choix = true;
-            }
+            }else if (inputChooseSPR.equals("nom")) {
+                System.out.println("quel nom veux-tu " +
+                        "prendre ?");
+                System.out.println("tapez votre " +
+                        "nouveau nom");
+                aventurier.setName(sc.nextLine());
+                System.out.println("bienvenue à toi " +
+                        aventurier.getName());
+
+            };
         }while (!choix);
     }
 }
