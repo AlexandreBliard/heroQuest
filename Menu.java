@@ -1,7 +1,7 @@
 package com.heroQuest;
 import java.util.Scanner;
 
-class Menu {
+public class Menu {
 
     public Menu() {
         System.out.println("constructeur ok");
