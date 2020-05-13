@@ -38,14 +38,6 @@ class Menu {
             }
         } while (!enigme);
 
-        System.out.println(
-                "je te salue vaillant aventurier "  +
-                "derrière moi se trouve " +
-                "l'entrée d'une grotte " +
-                "qui contient le sceptre de " +
-                "feu. Ramène le moi et je " +
-                "te promet une juste récompense "
-        );
 
         return aventurier;
     }
@@ -59,7 +51,7 @@ class Menu {
         int valueLife = 5;
         int valueAttack = 8;
         Warrior warrior = new Warrior(namePJ, valueLife, valueAttack);
-        System.out.println("admire toi "+ namePJ + warrior);
+        System.out.println("admire toi "+ warrior);
         return warrior;
     }
     public Wizard createWizard(String classePJ) {
@@ -72,7 +64,7 @@ class Menu {
         int valueLife = 5;
         int valueAttack = 8;
         Wizard wizard = new Wizard(namePJ, valueLife, valueAttack);
-        System.out.println("admire toi "+ namePJ + wizard);
+        System.out.println("admire toi " + wizard);
         return wizard;
     }
 }
