@@ -7,13 +7,14 @@ public class Menu {
 
     }
 
+
     public CommunPeople chooseYourCharacter() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("bonjour à toi " +
                 "aventurier, mes yeux sont " +
                 "fatigués et je ne vois plus " +
                 "très bien, es-tu un intrépide " +
                 "guerrier ou un rusé magicien ?");
-        Scanner sc = new Scanner(System.in);
         CommunPeople aventurier = null;
         boolean enigme = false;
         do {
@@ -41,7 +42,7 @@ public class Menu {
 
         return aventurier;
     }
-    public CommunPeople aventurier = chooseYourCharacter();
+    CommunPeople aventurier = chooseYourCharacter();
     public Warrior createWarrior(String classePJ) {
         System.out.println("dis moi " + classePJ +
                 " comment t'appeles-tu ?");
@@ -49,9 +50,7 @@ public class Menu {
                 "nom : ");
         Scanner sc = new Scanner(System.in);
         String namePJ = sc.nextLine();
-        int valueLife = 5;
-        int valueAttack = 8;
-        Warrior warrior = new Warrior(namePJ, valueLife, valueAttack);
+        Warrior warrior = new Warrior(namePJ);
         System.out.println("admire toi "+ warrior);
         return warrior;
     }
@@ -62,16 +61,13 @@ public class Menu {
                 "nom : ");
         Scanner sc = new Scanner(System.in);
         String namePJ = sc.nextLine();
-        int valueLife = 5;
-        int valueAttack = 8;
-        Wizard wizard = new Wizard(namePJ, valueLife, valueAttack);
+        Wizard wizard = new Wizard(namePJ);
         System.out.println("admire toi " + wizard);
         return wizard;
     }
 
 
     public void chooseSpecialRules() {
-        // write your code here
         SpecialRules leave = new SpecialRules();
         System.out.println("tu invoques les " +
                 "arcanes sacrés. Si tu veux " +

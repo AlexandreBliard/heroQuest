@@ -2,6 +2,7 @@ package com.heroQuest;
 
 public class CommunPeople {
 
+
     protected String name;
     protected int life;
     protected int attack;
