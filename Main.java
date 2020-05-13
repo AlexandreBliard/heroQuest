@@ -6,5 +6,7 @@ public class Main {
 	// write your code here
         Menu menu = new Menu();
         menu.chooseYourCharacter();
+        SpecialRules leave = new SpecialRules();
+        leave.leaveCavern();
     }
 }
