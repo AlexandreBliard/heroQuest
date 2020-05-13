@@ -19,8 +19,5 @@ public class Warrior extends CommunPeople{
 
 
 
-    /*tu en est arrêté au moment ou tu rentrais les par
-    * amètres du constructeur tu te posais la question
-    * si cela ne fait pas trop de variable pour
-    * pas grznd chose*/
+
 }
