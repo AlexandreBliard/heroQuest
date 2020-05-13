@@ -41,6 +41,7 @@ public class Menu {
 
         return aventurier;
     }
+    public CommunPeople aventurier = chooseYourCharacter();
     public Warrior createWarrior(String classePJ) {
         System.out.println("dis moi " + classePJ +
                 " comment t'appeles-tu ?");
@@ -66,5 +67,34 @@ public class Menu {
         Wizard wizard = new Wizard(namePJ, valueLife, valueAttack);
         System.out.println("admire toi " + wizard);
         return wizard;
+    }
+
+
+    public void chooseSpecialRules() {
+        // write your code here
+        SpecialRules leave = new SpecialRules();
+        System.out.println("tu invoques les " +
+                "arcanes sacrés. Si tu veux " +
+                "voir tes statistiques" +
+                "tape moi.");
+        System.out.println("si tu veux " +
+                "partir de la caverne " +
+                "tape partir");
+        System.out.println("si tu veux continuer" +
+                "ton aventure tape continuer");
+        boolean choix = false;
+        do {
+            Scanner sc = new Scanner(System.in);
+            String inputChooseSPR = sc.nextLine();
+            if (inputChooseSPR.equals("moi")) {
+                System.out.println(aventurier);
+            }else if (inputChooseSPR.equals("partir")) {
+                leave.leaveCavern();
+            }else if (inputChooseSPR.equals("continuer")) {
+                /*mettre ici un code qui retourne à l'état
+                * précédent*/
+                choix = true;
+            }
+        }while (!choix);
     }
 }
