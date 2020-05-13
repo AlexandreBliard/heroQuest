@@ -42,7 +42,9 @@ public class Menu {
 
         return aventurier;
     }
+
     CommunPeople aventurier = chooseYourCharacter();
+
     public Warrior createWarrior(String classePJ) {
         System.out.println("dis moi " + classePJ +
                 " comment t'appeles-tu ?");
@@ -54,6 +56,7 @@ public class Menu {
         System.out.println("admire toi "+ warrior);
         return warrior;
     }
+
     public Wizard createWizard(String classePJ) {
         System.out.println("dis moi " + classePJ +
                 " comment t'appeles-tu ?");
@@ -65,7 +68,6 @@ public class Menu {
         System.out.println("admire toi " + wizard);
         return wizard;
     }
-
 
     public void chooseSpecialRules() {
         SpecialRules leave = new SpecialRules();
