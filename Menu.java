@@ -1,4 +1,8 @@
 package com.heroQuest;
+import com.heroQuest.PJ.CommunPeople;
+import com.heroQuest.PJ.Warrior;
+import com.heroQuest.PJ.Wizard;
+
 import java.util.Scanner;
 
 public class Menu {

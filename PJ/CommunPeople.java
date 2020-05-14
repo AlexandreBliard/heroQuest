@@ -1,4 +1,4 @@
-package com.heroQuest;
+package com.heroQuest.PJ;
 
 public class CommunPeople {
 

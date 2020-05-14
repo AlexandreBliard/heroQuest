@@ -1,6 +1,4 @@
-package com.heroQuest;
-
-import java.util.Scanner;
+package com.heroQuest.PJ;
 
 public class Wizard extends CommunPeople{
 
