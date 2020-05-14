@@ -50,8 +50,6 @@ public class Menu {
         return aventurier;
     }
 
-
-
     public Warrior createWarrior(String classePJ) {
         System.out.println("dis moi " + classePJ +
                 " comment t'appeles-tu ?");
@@ -113,5 +111,34 @@ public class Menu {
                 choix = true;
             }
         }while (!choix);
+    }
+
+    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
+        System.out.println("te voilà donc " +
+                "prêt à pénétrer dans la " +
+                "caverne qui se trouve " +
+                "derrière moi. Tout au bout " +
+                "tu y trouveras le sceptre de " +
+                "Feu. Si tu me le ramènes tu " +
+                "auras 500 po et tous les trésors" +
+                "de cette caverne. Qu'en dis-tu ?");
+        System.out.println("êtes-vous prêts à " +
+                "vous aventurer dans cette caverne " +
+                "pour 500 po ? " +
+                "taper oui ou non.");
+        boolean reponse = false;
+        do {
+            String answer = keyboard.nextLine();
+            if (answer.equals("oui")){
+                Cavern cavern = new Cavern();
+                cavern.lauchGame(aventurier, keyboard);
+            }else if (answer.equals("non")){
+                SpecialRules leave = new SpecialRules();
+                leave.leaveCavern();
+            }else {
+                System.out.println("je ne suis pas sur " +
+                        "d'avoir bien compris");
+            }
+        }while (!reponse);
     }
 }
