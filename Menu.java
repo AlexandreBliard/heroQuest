@@ -50,7 +50,7 @@ public class Menu {
         return aventurier;
     }
 
-    CommunPeople aventurier = chooseYourCharacter();
+
 
     public Warrior createWarrior(String classePJ) {
         System.out.println("dis moi " + classePJ +
@@ -60,8 +60,7 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
         String namePJ = sc.nextLine();
         Weapons weapons = new SmallSword();
-        Warrior warrior = new Warrior(namePJ);
-        warrior.setWeapons(weapons);
+        Warrior warrior = new Warrior(namePJ, weapons);
         System.out.println("admire toi "+ warrior);
         return warrior;
     }
@@ -74,13 +73,12 @@ public class Menu {
         Scanner sc = new Scanner(System.in);
         String namePJ = sc.nextLine();
         Weapons spell = new MagicProjectile();
-        Wizard wizard = new Wizard(namePJ);
-        wizard.setWeapons(spell);
+        Wizard wizard = new Wizard(namePJ, spell);
         System.out.println("admire toi " + wizard);
         return wizard;
     }
 
-    public void chooseSpecialRules() {
+    public void chooseSpecialRules(CommunPeople aventurier) {
         SpecialRules leave = new SpecialRules();
         System.out.println("tu invoques les " +
                 "arcanes sacrés. Si tu veux " +
@@ -89,9 +87,9 @@ public class Menu {
         System.out.println("si tu veux " +
                 "partir de la caverne " +
                 "tape partir");
-        System.out.println("si tu veux changer" +
+        System.out.println("si tu veux changer " +
                 "ton nom tape nom");
-        System.out.println("si tu veux continuer" +
+        System.out.println("si tu veux continuer " +
                 "ton aventure tape continuer");
         boolean choix = false;
         do {

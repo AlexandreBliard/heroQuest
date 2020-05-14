@@ -4,7 +4,7 @@ import com.heroQuest.stuff.Weapons;
 
 public class Warrior extends CommunPeople{
 
-    public Warrior(String name) {
-        super ( 5);
+    public Warrior(String name, Weapons weapons) {
+        super ( name, 5, weapons);
     }
 }

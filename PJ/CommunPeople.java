@@ -4,15 +4,17 @@ import com.heroQuest.stuff.Weapons;
 
 public class CommunPeople {
 
-    protected Weapons weapons = new Weapons();
+    protected Weapons weapons = new Weapons(1, "fourche");
 /*---ATTRIBUTS------ATTRIBUTS------ATTRIBUTS------*/
     protected String name;
     protected int life;
     protected Weapons attack;
 
-    public CommunPeople(int life) {
-        this.name = "";
-        this.life = 2;
+/*--------- CONSTRUCTEURS  CONSTRUCTEURS   CONSTRUCTEURS ------------*/
+
+    public CommunPeople(String name, int life, Weapons weapons) {
+        this.name = name;
+        this.life = life;
         this.attack = weapons;
     }
 
@@ -35,8 +37,8 @@ public class CommunPeople {
     public String toString() {
         return "tu te nommes " + name +
                 " tu possèdes " + life + " points de vie "
-                + "tu possèdes " + weapons.getName() + " qui " +
-                "occasionne " + weapons.getDamage() + " points " +
+                + "tu possèdes " + this.attack.getName() + " qui " +
+                "occasionne " + this.attack.getDamage() + " points " +
                 "de dégâts";
     }
 

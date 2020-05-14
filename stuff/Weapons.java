@@ -14,9 +14,7 @@ public class Weapons {
     public void setName(String name) {this.name = name;}
 
 /*--------- CONSTRUCTEURS  CONSTRUCTEURS   CONSTRUCTEURS ------------*/
-    public Weapons() {
 
-    }
     public Weapons(int Cdamage, String Cname) {
         this.damage = Cdamage;
         this.name = Cname;
