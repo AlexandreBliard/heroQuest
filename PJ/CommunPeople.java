@@ -4,7 +4,7 @@ import com.heroQuest.stuff.Weapons;
 
 public class CommunPeople {
 
-    protected Weapons weapons = new Weapons(1, "fourche");
+    protected Weapons weapons = new Weapons(1, "une fourche");
 /*---ATTRIBUTS------ATTRIBUTS------ATTRIBUTS------*/
     protected String name;
     protected int life;
@@ -40,6 +40,10 @@ public class CommunPeople {
                 + "tu possèdes " + this.attack.getName() + " qui " +
                 "occasionne " + this.attack.getDamage() + " points " +
                 "de dégâts";
+    /*this.attack = Cweapons et j'ai besoin de Cweapons mais
+    * n'existe pas à ce moment là, c'est une relation de
+    * Schale inversé*/
     }
+
 
 }
