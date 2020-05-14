@@ -8,8 +8,13 @@ public class CommunPeople {
 /*---ATTRIBUTS------ATTRIBUTS------ATTRIBUTS------*/
     protected String name;
     protected int life;
-    protected Weapons attack = weapons;
+    protected Weapons attack;
 
+    public CommunPeople(int life) {
+        this.name = "";
+        this.life = 2;
+        this.attack = weapons;
+    }
 
     /*---------les SETTERS sont ici ------------*/
     public void setName(String name) { this.name = name; }
