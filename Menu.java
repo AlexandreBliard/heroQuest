@@ -2,6 +2,8 @@ package com.heroQuest;
 import com.heroQuest.PJ.CommunPeople;
 import com.heroQuest.PJ.Warrior;
 import com.heroQuest.PJ.Wizard;
+import com.heroQuest.stuff.MagicProjectile;
+import com.heroQuest.stuff.Weapons;
 
 import java.util.Scanner;
 
@@ -68,7 +70,9 @@ public class Menu {
                 "nom : ");
         Scanner sc = new Scanner(System.in);
         String namePJ = sc.nextLine();
+        Weapons spell = new MagicProjectile();
         Wizard wizard = new Wizard(namePJ);
+        wizard.setWeapons(spell);
         System.out.println("admire toi " + wizard);
         return wizard;
     }
