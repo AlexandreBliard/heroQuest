@@ -1,6 +1,5 @@
 package com.heroQuest.PJ;
 
-import com.heroQuest.stuff.MagicProjectile;
 import com.heroQuest.stuff.Weapons;
 
 public class Wizard extends CommunPeople{

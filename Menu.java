@@ -3,6 +3,7 @@ import com.heroQuest.PJ.CommunPeople;
 import com.heroQuest.PJ.Warrior;
 import com.heroQuest.PJ.Wizard;
 import com.heroQuest.stuff.MagicProjectile;
+import com.heroQuest.stuff.SmallSword;
 import com.heroQuest.stuff.Weapons;
 
 import java.util.Scanner;
@@ -58,7 +59,9 @@ public class Menu {
                 "nom : ");
         Scanner sc = new Scanner(System.in);
         String namePJ = sc.nextLine();
+        Weapons weapons = new SmallSword();
         Warrior warrior = new Warrior(namePJ);
+        warrior.setWeapons(weapons);
         System.out.println("admire toi "+ warrior);
         return warrior;
     }
