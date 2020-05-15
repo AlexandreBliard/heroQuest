@@ -131,7 +131,7 @@ public class Menu {
             String answer = keyboard.nextLine();
             if (answer.equals("oui")){
                 Cavern cavern = new Cavern();
-                cavern.lauchGame(aventurier, keyboard);
+                cavern.launchGame(aventurier, keyboard);
             }else if (answer.equals("non")){
                 SpecialRules leave = new SpecialRules();
                 leave.leaveCavern();
