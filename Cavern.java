@@ -35,7 +35,7 @@ public class Cavern {
             String answer = keyboard.nextLine();
             if (answer.equals("oui")) {
                 Menu menu = new Menu();
-                menu.chooseYourCharacter();
+                menu.chooseYourCharacter(keyboard);
             }else if (answer.equals("non")) {
                 SpecialRules leave = new SpecialRules();
                 leave.leaveCavern();

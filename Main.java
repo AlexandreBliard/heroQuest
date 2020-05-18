@@ -8,7 +8,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
         Menu menu = new Menu();
-        CommunPeople aventurier = menu.chooseYourCharacter();
+        CommunPeople aventurier = menu.chooseYourCharacter(sc);
         if (input.equals("arcanes sacrés")) {
             menu.chooseSpecialRules(aventurier);
         }

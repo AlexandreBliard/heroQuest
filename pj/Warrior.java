@@ -5,11 +5,11 @@ import com.heroquest.stuff.Weapons;
 
 public class Warrior extends CommunPeople{
 
-    public Warrior(String name, int life, Weapons weapons) {
-        super(name, life, weapons);
+    public Warrior(String type, String name, int life, Weapons weapons) {
+        super(type, name, life, weapons);
     }
     public Warrior(String name, Weapons weapons) {
-        this( name, 5, weapons);
+        this("guerrier",  name, 5, weapons);
     }
     public Warrior(String name) {
         this(name, new SmallSword());

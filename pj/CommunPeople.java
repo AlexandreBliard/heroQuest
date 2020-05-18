@@ -6,13 +6,15 @@ public abstract class CommunPeople {
 
 
 /*---ATTRIBUTS------ATTRIBUTS------ATTRIBUTS------*/
+    protected String type;
     protected String name;
     protected int life;
     protected Weapons attack;
 
 /*--------- CONSTRUCTEURS  CONSTRUCTEURS   CONSTRUCTEURS ------------*/
 
-    public CommunPeople(String name, int life, Weapons weapons) {
+    public CommunPeople(String type, String name, int life, Weapons weapons) {
+        this.type = type;
         this.name = name;
         this.life = life;
         this.attack = weapons;
@@ -24,13 +26,15 @@ public abstract class CommunPeople {
     public void setAttack(Weapons attack) {this.attack = attack;}
 
  /*--------les GETTERS sont ici------------*/
+    public String getType() {return type;}
     public String getName() {return name;}
     public int getLife() {return life;}
     public Weapons getAttack() {return attack;}
 
 /*---------redéfinitions de toSTRING ici---------*/
     public String toString() {
-        return "tu te nommes " + name +
+        return "regarde toi " + name +
+                " tu es un " + type +
                 " tu possèdes " + life + " points de vie "
                 + "tu possèdes " + this.attack.getName() + " qui " +
                 "occasionne " + this.attack.getDamage() + " points " +
