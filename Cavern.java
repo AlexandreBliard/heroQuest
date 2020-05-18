@@ -1,6 +1,8 @@
 package com.heroquest;
 
 import com.heroquest.pj.CommunPeople;
+
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Cavern {
@@ -12,11 +14,11 @@ public class Cavern {
                 "ne vous permet de voir que jusqu'à " +
                 "quelques mètres. Vous allumez " +
                 "donc une torche et vous commencez " +
-                "à avancer prudemment, l'épée" +
-                "dégainé");
+                "à avancer prudemment");
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
         Dice move = new Dice();
+        ArrayList<Integer/*DQP mettre un objet*/> plateau = new ArrayList<Integer>(63);
         int position = 0;
         do {
             String input = keyboard.nextLine();
