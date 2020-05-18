@@ -35,7 +35,7 @@ public abstract class CommunPeople {
     public String toString() {
         return "regarde toi " + name +
                 " tu es un " + type +
-                " tu possèdes " + life + " points de vie "
+                " avec " + life + " points de vie, "
                 + "tu possèdes " + this.attack.getName() + " qui " +
                 "occasionne " + this.attack.getDamage() + " points " +
                 "de dégâts";

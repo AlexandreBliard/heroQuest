@@ -1,9 +1,6 @@
 package com.heroquest.dungeon;
 
-import com.heroquest.ChooseYourCharacter;
-import com.heroquest.Dice;
 import com.heroquest.Menu;
-import com.heroquest.option.LeaveCavern;
 import com.heroquest.pj.CommunPeople;
 
 import java.util.ArrayList;
@@ -27,7 +24,6 @@ public class EnterCavern {
                 "perdu tape arcanes sacrés'");
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
-        Dice move = new Dice();
         ArrayList<CommunPeople> plateau = new ArrayList<CommunPeople>(63);
         int position = 0;
         /*----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----
@@ -48,20 +44,11 @@ public class EnterCavern {
         System.out.println("Sceptre de Feu acquis");
         System.out.println("voulez-vous rejouer ? " +
                 "oui / non ");
-        boolean restart = false;
-        do {
-            String answer = keyboard.nextLine();
-            if (answer.equals("oui")) {
-                ChooseYourCharacter menu = new ChooseYourCharacter();
-                menu.chooseYourCharacter(keyboard);
-            }else if (answer.equals("non")) {
-                LeaveCavern leave = new LeaveCavern();
-                leave.leaveCavern(aventurier, keyboard);
-            }else {
-                System.out.println("navré je n'ai " +
-                        "pas compris votre " +
-                        "commande");
-            }
-        }while (!restart);
+
+        if (menu.choice(aventurier, keyboard)) {
+            menu.chooseYouCharacter(keyboard);
+        }else {
+            menu.leaveCavern(aventurier, keyboard);
+        }
     }
 }

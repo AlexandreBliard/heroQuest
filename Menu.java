@@ -16,7 +16,7 @@ public class Menu {
 
     }
 
-    public CommunPeople crossRoad(Scanner keyboard) {
+    public CommunPeople chooseYouCharacter(Scanner keyboard) {
         ChooseYourCharacter start = new ChooseYourCharacter();
         return start.chooseYourCharacter(keyboard);
     }
