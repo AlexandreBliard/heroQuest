@@ -1,12 +1,17 @@
-package com.heroquest;
+package com.heroquest.dungeon;
 
-import com.heroquest.pj.CommunPeople;
+import com.heroquest.ChooseYourCharacter;
+import com.heroquest.Dice;
 import com.heroquest.option.LeaveCavern;
+import com.heroquest.pj.CommunPeople;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Cavern {
+public class LauchGame {
+
+    public LauchGame() {
+    }
 
     public void launchGame(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("vous êtes dans la caverne, " +
