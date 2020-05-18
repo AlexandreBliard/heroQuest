@@ -1,7 +1,7 @@
 package com.heroquest;
 
 import com.heroquest.pj.CommunPeople;
-import com.heroquest.option.SpecialOptions;
+import com.heroquest.option.LeaveCavern;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -40,8 +40,8 @@ public class Cavern {
                 ChooseYourCharacter menu = new ChooseYourCharacter();
                 menu.chooseYourCharacter(keyboard);
             }else if (answer.equals("non")) {
-                SpecialOptions leave = new SpecialOptions();
-                leave.leaveCavern();
+                LeaveCavern leave = new LeaveCavern();
+                leave.leaveCavern(keyboard);
             }else {
                 System.out.println("navré je n'ai " +
                         "pas compris votre " +

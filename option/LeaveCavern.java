@@ -2,14 +2,14 @@ package com.heroquest.option;
 
 import java.util.Scanner;
 
-public class SpecialOptions {
+public class LeaveCavern{
 
-    public SpecialOptions() {
+    public LeaveCavern() {
         System.out.println("constructeur " +
                 "spécialRules");
     }
 
-    public void leaveCavern() {
+    public void leaveCavern(Scanner keyboard) {
         System.out.println("attention vous " +
                 "allez quitter ce jeu génial " +
                 "taper ok sur le clavier " +
@@ -17,8 +17,7 @@ public class SpecialOptions {
                 "l'aventure");
         boolean exitGame = false;
         do {
-            Scanner sc = new Scanner(System.in);
-            String input = sc.nextLine();
+            String input = keyboard.nextLine();
             if (input.equals("ok")) {
                 System.out.println("j'espère te revoir");
                 exitGame = true;

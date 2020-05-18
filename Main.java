@@ -9,9 +9,7 @@ public class Main {
         String input = sc.nextLine();
         Menu menu = new Menu();
         CommunPeople aventurier = menu.crossRoad(sc);
-        if (input.equals("arcanes sacrés")) {
-            menu.chooseSpecialRules(aventurier, sc);
-        }
+        menu.options(aventurier, sc);
         menu.enterCavern(aventurier, sc);
     }
 }

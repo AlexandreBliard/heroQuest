@@ -1,7 +1,8 @@
 package com.heroquest;
 
+import com.heroquest.option.OneOptionForGouvernAll;
 import com.heroquest.pj.CommunPeople;
-import com.heroquest.option.SpecialOptions;
+import com.heroquest.option.LeaveCavern;
 
 import java.util.Scanner;
 
@@ -11,45 +12,17 @@ public class Menu {
 
     }
     ChooseYourCharacter start = new ChooseYourCharacter();
+    OneOptionForGouvernAll options = new OneOptionForGouvernAll();
+
+
     public CommunPeople crossRoad(Scanner keyboard) {
-        return start.chooseYourCharacter(keyboard);
+            return start.chooseYourCharacter(keyboard);
     }
 
-    public void chooseSpecialRules(CommunPeople aventurier, Scanner keyboard) {
-        SpecialOptions leave = new SpecialOptions();
-        System.out.println("tu invoques les " +
-                "arcanes sacrés. Si tu veux " +
-                "voir tes statistiques" +
-                "tape moi.");
-        System.out.println("si tu veux " +
-                "partir de la caverne " +
-                "tape partir");
-        System.out.println("si tu veux changer " +
-                "ton nom tape nom");
-        System.out.println("si tu veux continuer " +
-                "ton aventure tape continuer");
-        boolean choix = false;
-        do {
-            String inputChooseSPR = keyboard.nextLine();
-            if (inputChooseSPR.equals("moi")) {
-                System.out.println(aventurier);
-            } else if (inputChooseSPR.equals("partir")) {
-                leave.leaveCavern();
-            } else if (inputChooseSPR.equals("nom")) {
-                System.out.println("quel nom veux-tu " +
-                        "prendre ?");
-                System.out.println("tapez votre " +
-                        "nouveau nom");
-                aventurier.setName(keyboard.nextLine());
-                System.out.println("bienvenue à toi " +
-                        aventurier.getName());
-            } else if (inputChooseSPR.equals("continuer")) {
-                /*mettre ici un code qui retourne à l'état
-                 * précédent*/
-                choix = true;
-            }
-        } while (!choix);
+    public void options(CommunPeople aventurier, Scanner keyboard) {
+        options.chooseSpecialRules(aventurier, keyboard);
     }
+
 
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("te voilà donc " +
@@ -71,8 +44,8 @@ public class Menu {
                 Cavern cavern = new Cavern();
                 cavern.launchGame(aventurier, keyboard);
             } else if (answer.equals("non")) {
-                SpecialOptions leave = new SpecialOptions();
-                leave.leaveCavern();
+                LeaveCavern leave = new LeaveCavern();
+                leave.leaveCavern(keyboard);
             } else {
                 System.out.println("je ne suis pas sur " +
                         "d'avoir bien compris");
