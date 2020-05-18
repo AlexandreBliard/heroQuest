@@ -39,7 +39,7 @@ public class EnterCavern {
         do {
             String input = keyboard.nextLine();
             if (input.equals("")) {
-                menu.forward(position);
+                position = menu.forward(position);
             }else if (input.equals("arcanes sacrés")) {
                 menu.options(aventurier, keyboard);
             }
