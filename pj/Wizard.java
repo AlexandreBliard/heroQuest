@@ -11,6 +11,5 @@ public class Wizard extends CommunPeople{
     }
     public Wizard(String name) {
         this(name, new MagicProjectile());
-
     }
 }

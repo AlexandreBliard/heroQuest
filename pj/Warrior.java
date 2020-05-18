@@ -1,5 +1,6 @@
 package com.heroquest.pj;
 
+import com.heroquest.stuff.SmallSword;
 import com.heroquest.stuff.Weapons;
 
 public class Warrior extends CommunPeople{
@@ -8,9 +9,11 @@ public class Warrior extends CommunPeople{
         super(name, life, weapons);
     }
     public Warrior(String name, Weapons weapons) {
-        super ( name, 5, weapons);
+        this( name, 5, weapons);
     }
-
+    public Warrior(String name) {
+        this(name, new SmallSword());
+    }
 
 }
 /*TD : reprendre pour pouvoir mettre
