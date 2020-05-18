@@ -1,10 +1,11 @@
-package com.heroQuest;
-import com.heroQuest.PJ.CommunPeople;
-import com.heroQuest.PJ.Warrior;
-import com.heroQuest.PJ.Wizard;
-import com.heroQuest.stuff.MagicProjectile;
-import com.heroQuest.stuff.SmallSword;
-import com.heroQuest.stuff.Weapons;
+package com.heroquest;
+
+import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.Warrior;
+import com.heroquest.pj.Wizard;
+import com.heroquest.stuff.MagicProjectile;
+import com.heroquest.stuff.SmallSword;
+import com.heroquest.stuff.Weapons;
 
 import java.util.Scanner;
 
@@ -29,18 +30,18 @@ public class Menu {
                     "vous êtes un guerrier " +
                     "ou un magicien");
             String classePJ = sc.nextLine();
-            if (classePJ.equals("GUERRIER") ) {
+            if (classePJ.equals("GUERRIER")) {
                 aventurier = createWarrior(classePJ);
                 enigme = true;
                 return aventurier;
-            }else if (classePJ.equals("MAGICIEN")){
+            } else if (classePJ.equals("MAGICIEN")) {
                 aventurier = createWizard(classePJ);
                 enigme = true;
                 return aventurier;
-            }else if (classePJ.equals("guerrier") || classePJ.equals("magicien")) {
+            } else if (classePJ.equals("guerrier") || classePJ.equals("magicien")) {
                 System.out.println("je t'entend mal " +
-                        "jeune "+ classePJ);
-            }else {
+                        "jeune " + classePJ);
+            } else {
                 System.out.println("je ne suis pas " +
                         "sur de bien comprendre");
             }
@@ -59,10 +60,11 @@ public class Menu {
         String namePJ = sc.nextLine();
         Weapons weapons = new SmallSword();
         Warrior warrior = new Warrior(namePJ, weapons);
-        System.out.println("admire toi "+ warrior);
+        System.out.println("admire toi " + warrior);
         return warrior;
     }
 
+    /*REPRENDRE ET REFACTORISER CES 2 METHODES-----------*/
     public Wizard createWizard(String classePJ) {
         System.out.println("dis moi " + classePJ +
                 " comment t'appeles-tu ?");
@@ -95,9 +97,9 @@ public class Menu {
             String inputChooseSPR = sc.nextLine();
             if (inputChooseSPR.equals("moi")) {
                 System.out.println(aventurier);
-            }else if (inputChooseSPR.equals("partir")) {
+            } else if (inputChooseSPR.equals("partir")) {
                 leave.leaveCavern();
-            }else if (inputChooseSPR.equals("nom")) {
+            } else if (inputChooseSPR.equals("nom")) {
                 System.out.println("quel nom veux-tu " +
                         "prendre ?");
                 System.out.println("tapez votre " +
@@ -105,12 +107,12 @@ public class Menu {
                 aventurier.setName(sc.nextLine());
                 System.out.println("bienvenue à toi " +
                         aventurier.getName());
-            }else if (inputChooseSPR.equals("continuer")) {
+            } else if (inputChooseSPR.equals("continuer")) {
                 /*mettre ici un code qui retourne à l'état
-                * précédent*/
+                 * précédent*/
                 choix = true;
             }
-        }while (!choix);
+        } while (!choix);
     }
 
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
@@ -129,16 +131,16 @@ public class Menu {
         boolean reponse = false;
         do {
             String answer = keyboard.nextLine();
-            if (answer.equals("oui")){
+            if (answer.equals("oui")) {
                 Cavern cavern = new Cavern();
                 cavern.launchGame(aventurier, keyboard);
-            }else if (answer.equals("non")){
+            } else if (answer.equals("non")) {
                 SpecialRules leave = new SpecialRules();
                 leave.leaveCavern();
-            }else {
+            } else {
                 System.out.println("je ne suis pas sur " +
                         "d'avoir bien compris");
             }
-        }while (!reponse);
+        } while (!reponse);
     }
 }

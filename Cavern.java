@@ -1,6 +1,6 @@
-package com.heroQuest;
+package com.heroquest;
 
-import com.heroQuest.PJ.CommunPeople;
+import com.heroquest.pj.CommunPeople;
 import java.util.Scanner;
 
 public class Cavern {

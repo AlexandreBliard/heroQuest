@@ -1,10 +1,10 @@
-package com.heroQuest.PJ;
+package com.heroquest.pj;
 
-import com.heroQuest.stuff.Weapons;
+import com.heroquest.stuff.Weapons;
 
-public class CommunPeople {
+public abstract class CommunPeople {
 
-    protected Weapons weapons = new Weapons(1, "une fourche");
+
 /*---ATTRIBUTS------ATTRIBUTS------ATTRIBUTS------*/
     protected String name;
     protected int life;
@@ -22,12 +22,7 @@ public class CommunPeople {
     public void setName(String name) { this.name = name; }
     public void setLife(int life) {this.life = life;}
     public void setAttack(Weapons attack) {this.attack = attack;}
-    /*-------SETTER de WEAPONS indispensable pour
-    appliquer les armes dans la partie--------------*/
-    public Weapons setWeapons (Weapons Cweapons) {
-        this.weapons = Cweapons;
-        return Cweapons;
-    }
+
  /*--------les GETTERS sont ici------------*/
     public String getName() {return name;}
     public int getLife() {return life;}

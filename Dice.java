@@ -1,4 +1,4 @@
-package com.heroQuest;
+package com.heroquest;
 
 public class Dice {
     public int deuxDsix () {

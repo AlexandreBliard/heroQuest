@@ -1,4 +1,4 @@
-package com.heroQuest.stuff;
+package com.heroquest.stuff;
 
 public class MagicProjectile extends Weapons {
     public MagicProjectile() {

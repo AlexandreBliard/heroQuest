@@ -1,6 +1,6 @@
-package com.heroQuest.stuff;
+package com.heroquest.stuff;
 
-public class Weapons {
+public abstract class Weapons {
 
     protected int damage;
     protected String name;

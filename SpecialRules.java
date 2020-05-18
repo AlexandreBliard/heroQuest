@@ -1,4 +1,4 @@
-package com.heroQuest;
+package com.heroquest;
 
 import java.util.Scanner;
 
