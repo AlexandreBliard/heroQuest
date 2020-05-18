@@ -20,7 +20,7 @@ public class Menu {
                 "nom : ");
         String namePJ = keyboard.nextLine();
         System.out.println("Bonjour à toi " + namePJ
-        + " est-ce un vaillant guerrier " +
+                + " est-ce un vaillant guerrier " +
                 "ou un rusé magicien qui " +
                 "se tient devant moi ?");
         CommunPeople aventurier = null;
@@ -42,7 +42,6 @@ public class Menu {
                         "sur de bien comprendre");
             }
         } while (!enigme);
-
         return aventurier;
     }
 
