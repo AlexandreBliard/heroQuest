@@ -25,7 +25,7 @@ public class OneOptionForGouvernAll {
             if (inputChooseSPR.equals("moi")) {
                 System.out.println(aventurier);
             } else if (inputChooseSPR.equals("partir")) {
-                leave.leaveCavern(keyboard);
+                leave.leaveCavern(aventurier, keyboard);
             } else if (inputChooseSPR.equals("nom")) {
                 name.changeName(aventurier, keyboard);
             } else if (inputChooseSPR.equals("continuer")) {

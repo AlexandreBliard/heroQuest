@@ -8,12 +8,12 @@ import com.heroquest.pj.CommunPeople;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class LauchGame {
+public class EnterCavern {
 
-    public LauchGame() {
+    public EnterCavern() {
     }
 
-    public void launchGame(CommunPeople aventurier, Scanner keyboard) {
+    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("vous êtes dans la caverne, " +
                 "vous voyez un long couloir sombre " +
                 "que la clarté de l'extérieur " +
@@ -24,8 +24,14 @@ public class LauchGame {
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
         Dice move = new Dice();
-        ArrayList<Integer/*DQP mettre un objet*/> plateau = new ArrayList<Integer>(63);
+        ArrayList<CommunPeople> plateau = new ArrayList<CommunPeople>(63);
         int position = 0;
+        /*----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----
+        * il faut que la position du joueur soit égal à la position de l'arrayList
+        * pour cela il faut créer un nouvel emplacement dont la position array = position
+        * du jouer ET delete la position précédente (soit chiffre-dés)
+        * Dans un deuxième temps il faut mettre un sous-tableau pour description,
+        * monstres, trésors etc ...*/
         do {
             String input = keyboard.nextLine();
             if (input.equals("")) {
@@ -46,7 +52,7 @@ public class LauchGame {
                 menu.chooseYourCharacter(keyboard);
             }else if (answer.equals("non")) {
                 LeaveCavern leave = new LeaveCavern();
-                leave.leaveCavern(keyboard);
+                leave.leaveCavern(aventurier, keyboard);
             }else {
                 System.out.println("navré je n'ai " +
                         "pas compris votre " +

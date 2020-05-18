@@ -14,9 +14,8 @@ public class ChooseYourCharacter {
                 "nom : ");
         String namePJ = keyboard.nextLine();
         System.out.println("Bonjour à toi " + namePJ
-                + " est-ce un vaillant guerrier " +
-                "ou un rusé magicien qui " +
-                "se tient devant moi ?");
+                + " es-tu un vaillant guerrier " +
+                "ou un rusé magicien ?");
         CommunPeople aventurier = null;
         boolean enigme = false;
         do {
