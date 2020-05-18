@@ -8,7 +8,8 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Menu menu = new Menu();
         CommunPeople aventurier = menu.crossRoad(sc);
-        menu.options(aventurier, sc);
+        menu.options(aventurier, sc);/*à l'occase le mettre au bon endroit ça
+        CàD accessible dans le jeu*/
         menu.enterCavern(aventurier, sc);
     }
 }
