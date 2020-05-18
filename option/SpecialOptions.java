@@ -1,10 +1,10 @@
-package com.heroquest;
+package com.heroquest.option;
 
 import java.util.Scanner;
 
-public class SpecialRules {
+public class SpecialOptions {
 
-    public SpecialRules() {
+    public SpecialOptions() {
         System.out.println("constructeur " +
                 "spécialRules");
     }

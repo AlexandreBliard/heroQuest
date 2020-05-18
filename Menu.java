@@ -1,6 +1,7 @@
 package com.heroquest;
 
 import com.heroquest.pj.CommunPeople;
+import com.heroquest.option.SpecialOptions;
 
 import java.util.Scanner;
 
@@ -15,7 +16,7 @@ public class Menu {
     }
 
     public void chooseSpecialRules(CommunPeople aventurier, Scanner keyboard) {
-        SpecialRules leave = new SpecialRules();
+        SpecialOptions leave = new SpecialOptions();
         System.out.println("tu invoques les " +
                 "arcanes sacrés. Si tu veux " +
                 "voir tes statistiques" +
@@ -70,7 +71,7 @@ public class Menu {
                 Cavern cavern = new Cavern();
                 cavern.launchGame(aventurier, keyboard);
             } else if (answer.equals("non")) {
-                SpecialRules leave = new SpecialRules();
+                SpecialOptions leave = new SpecialOptions();
                 leave.leaveCavern();
             } else {
                 System.out.println("je ne suis pas sur " +
