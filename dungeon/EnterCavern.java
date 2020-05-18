@@ -2,6 +2,7 @@ package com.heroquest.dungeon;
 
 import com.heroquest.ChooseYourCharacter;
 import com.heroquest.Dice;
+import com.heroquest.Menu;
 import com.heroquest.option.LeaveCavern;
 import com.heroquest.pj.CommunPeople;
 
@@ -12,7 +13,7 @@ public class EnterCavern {
 
     public EnterCavern() {
     }
-
+    Menu menu = new Menu();
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("vous êtes dans la caverne, " +
                 "vous voyez un long couloir sombre " +
@@ -21,6 +22,9 @@ public class EnterCavern {
                 "quelques mètres. Vous allumez " +
                 "donc une torche et vous commencez " +
                 "à avancer prudemment");
+        System.out.println("vous entendez au loin " +
+                "le sage vous dire : 'si tu es " +
+                "perdu tape arcanes sacrés'");
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
         Dice move = new Dice();
@@ -35,9 +39,9 @@ public class EnterCavern {
         do {
             String input = keyboard.nextLine();
             if (input.equals("")) {
-                position = position + move.movePlayer();
-                System.out.println("vous êtes " +
-                        "sur la case "+ position);
+                menu.forward(position);
+            }else if (input.equals("arcanes sacrés")) {
+                menu.options(aventurier, keyboard);
             }
         }while (position <= 63 /*remplacer
                     par longueur tableau*/);
