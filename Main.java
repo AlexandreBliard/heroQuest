@@ -10,7 +10,7 @@ public class Main {
         Menu menu = new Menu();
         CommunPeople aventurier = menu.crossRoad(sc);
         if (input.equals("arcanes sacrés")) {
-            menu.chooseSpecialRules(aventurier);
+            menu.chooseSpecialRules(aventurier, sc);
         }
         menu.enterCavern(aventurier, sc);
     }

@@ -14,7 +14,7 @@ public class Menu {
         return start.chooseYourCharacter(keyboard);
     }
 
-    public void chooseSpecialRules(CommunPeople aventurier) {
+    public void chooseSpecialRules(CommunPeople aventurier, Scanner keyboard) {
         SpecialRules leave = new SpecialRules();
         System.out.println("tu invoques les " +
                 "arcanes sacrés. Si tu veux " +
@@ -29,8 +29,7 @@ public class Menu {
                 "ton aventure tape continuer");
         boolean choix = false;
         do {
-            Scanner sc = new Scanner(System.in);
-            String inputChooseSPR = sc.nextLine();
+            String inputChooseSPR = keyboard.nextLine();
             if (inputChooseSPR.equals("moi")) {
                 System.out.println(aventurier);
             } else if (inputChooseSPR.equals("partir")) {
@@ -40,7 +39,7 @@ public class Menu {
                         "prendre ?");
                 System.out.println("tapez votre " +
                         "nouveau nom");
-                aventurier.setName(sc.nextLine());
+                aventurier.setName(keyboard.nextLine());
                 System.out.println("bienvenue à toi " +
                         aventurier.getName());
             } else if (inputChooseSPR.equals("continuer")) {
