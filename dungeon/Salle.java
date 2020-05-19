@@ -10,14 +10,14 @@ public class Salle {
     protected Weapons reward;
 
     public String description() {
-        Description salle = Description.SALLE;
-
+        Description salle = Description.randomDescription();
+        System.out.println(salle);
         switch (salle) {
             case SALLE:
-                return "dans une pièce vétuste dépouillé" +
+                return "dans une pièce vétuste dépouillé " +
                         "de tout meuble";
             case COULOIR:
-                return "dans un long couloir sombre, tu évites les \" +\n" +
+                return "dans un long couloir sombre, tu évites les " +
                         " stalactites grâce à la faible clarté de ta torche.";
 
             case GDSALLE:
