@@ -11,6 +11,7 @@ public class EnterCavern {
     public EnterCavern() {
     }
     Menu menu = new Menu();
+    Salle salle = new Salle();
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("vous êtes dans la caverne, " +
                 "vous voyez un long couloir sombre " +
@@ -24,7 +25,11 @@ public class EnterCavern {
                 "perdu tape arcanes sacrés'");
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
-        ArrayList<CommunPeople> plateau = new ArrayList<CommunPeople>(63);
+        Integer taillePlateau = 63;
+        ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
+        for (int i = 0; i<taillePlateau; i++) {
+            plateaux.add(salle);
+        }
         int position = 0;
         /*----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----
         * il faut que la position du joueur soit égal à la position de l'arrayList
@@ -36,11 +41,17 @@ public class EnterCavern {
             String input = keyboard.nextLine();
             if (input.equals("")) {
                 position = menu.forward(position);
+                try {
+                    plateaux.set(position, salle);//ici on décrit la pièce
+                    System.out.println(plateaux.get(position));
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("on avance");
+                }
+                System.out.println("avance avec entrée");
             }else if (input.equals("arcanes sacrés")) {
                 menu.options(aventurier, keyboard);
             }
-        }while (position <= 63 /*remplacer
-                    par longueur tableau*/);
+        }while (position <= plateaux.size());
         System.out.println("Sceptre de Feu acquis");
         System.out.println("voulez-vous rejouer ? " +
                 "oui / non ");
