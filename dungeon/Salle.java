@@ -11,7 +11,6 @@ public class Salle {
 
     public String description() {
         Description salle = Description.randomDescription();
-        System.out.println(salle);
         switch (salle) {
             case SALLE:
                 return "dans une pièce vétuste dépouillé " +

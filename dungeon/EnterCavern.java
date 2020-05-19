@@ -11,7 +11,6 @@ public class EnterCavern {
     public EnterCavern() {
     }
     Menu menu = new Menu();
-    Salle salle = new Salle();
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("vous êtes dans la caverne, " +
                 "vous voyez un long couloir sombre " +
@@ -28,6 +27,7 @@ public class EnterCavern {
         Integer taillePlateau = 63;
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<taillePlateau; i++) {
+            Salle salle = new Salle();
             plateaux.add(salle);
         }
         int position = 0;
@@ -42,7 +42,7 @@ public class EnterCavern {
             if (input.equals("")) {
                 position = menu.forward(position);
                 try {
-                    plateaux.set(position, salle);//ici on décrit la pièce
+                    plateaux.get(position);//ici on décrit la pièce
                     System.out.println(plateaux.get(position));
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("on avance");
