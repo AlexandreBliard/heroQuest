@@ -21,6 +21,8 @@ public abstract class CommunPeople {
     }
 
     /*---------les SETTERS sont ici ------------*/
+
+    public void setType(String type) { this.type = type; }
     public void setName(String name) { this.name = name; }
     public void setLife(int life) {this.life = life;}
     public void setAttack(Weapons attack) {this.attack = attack;}
