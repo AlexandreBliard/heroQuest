@@ -3,6 +3,7 @@ package com.heroquest.dungeon;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pnj.Dragon;
 import com.heroquest.pnj.Goblins;
+import com.heroquest.pnj.NoOne;
 import com.heroquest.pnj.Sorcerer;
 import com.heroquest.stuff.Weapons;
 
@@ -77,6 +78,8 @@ public class Salle {
                 return new Sorcerer();
             case GOBELINS:
                 return new Goblins();
+            case NOONE:
+                return new NoOne();
         }
         return new Goblins();
     }

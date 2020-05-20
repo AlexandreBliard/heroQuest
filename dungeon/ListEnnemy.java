@@ -8,7 +8,8 @@ import java.util.Random;
 public enum ListEnnemy {
     GOBELINS,
     SORCIER,
-    DRAGONS;
+    DRAGONS,
+    NOONE;
 
     private static final List<ListEnnemy> VALUES =
             Collections.unmodifiableList
