@@ -10,7 +10,7 @@ import com.heroquest.stuff.Weapons;
 public class Salle {
     protected String salle = description();
     protected int index;
-    protected CommunPeople ennemis = ennemy();
+    protected CommunPeople ennemis = new NoOne();
     protected Weapons reward;
 
     public String description() {
@@ -69,7 +69,7 @@ public class Salle {
                 "ne fonctionne pas";
     }
 
-    public CommunPeople ennemy() {
+    /*public CommunPeople ennemy() {
         ListEnnemy adversaire = ListEnnemy.RandomEnnemy();
         switch (adversaire) {
             case DRAGONS:
@@ -82,7 +82,7 @@ public class Salle {
                 return new NoOne();
         }
         return new Goblins();
-    }
+    }*/
 /*SETTER------SETTER------SETTER------SETTER------*/
 
 
