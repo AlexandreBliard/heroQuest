@@ -14,7 +14,8 @@ public class Warrior extends CommunPeople{
     public Warrior(String name) {
         this(name, new SmallSword());
     }
-
+/*à l'occase il serait pratique de voir si interface permet de gérer
+* le stuff du PJ*/
 }
 /*TD : reprendre pour pouvoir mettre
 directement SmallSword dans les âraùmetres de l'arme*/
