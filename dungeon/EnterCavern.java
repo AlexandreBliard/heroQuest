@@ -70,6 +70,8 @@ public class EnterCavern {
                 System.out.println("avance avec entrée");
             }else if (input.equals("arcanes sacrés")) {
                 menu.options(aventurier, keyboard);
+            }else {
+                System.out.println("petite faute de frappe non ?");
             }
         }while (position <= plateaux.size());
         System.out.println("Sceptre de Feu acquis");
