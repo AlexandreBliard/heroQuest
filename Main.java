@@ -1,5 +1,4 @@
 package com.heroquest;
-import com.heroquest.pj.CommunPeople;
 
 import java.util.Scanner;
 

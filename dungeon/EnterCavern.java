@@ -28,7 +28,9 @@ public class EnterCavern {
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<taillePlateau; i++) {
             Salle salle = new Salle();
-            plateaux.add(salle.setSalle());
+            DescriptionChoice description = new DescriptionChoice();
+            plateaux.add(salle);
+            salle.setDescription(description.description());
         }
         int position = 0;
         /*
@@ -64,7 +66,7 @@ public class EnterCavern {
                     plateaux.get(position);//ici on décrit la pièce
                     System.out.println(plateaux.get(position));
                 } catch (IndexOutOfBoundsException e) {
-                    System.out.println("on avance");
+                    System.out.println("tu trouves le sceptre de Feu");
                 }
                 System.out.println("avance avec entrée");
             }else if (input.equals("arcanes sacrés")) {
