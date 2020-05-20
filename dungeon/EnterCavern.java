@@ -16,11 +16,11 @@ public class EnterCavern {
                 "vous voyez un long couloir sombre " +
                 "que la clarté de l'extérieur " +
                 "ne vous permet de voir que jusqu'à " +
-                "quelques mètres. Vous allumez " +
-                "donc une torche et vous commencez " +
+                "quelques mètres. tu allumes " +
+                "donc une torche et tu commences " +
                 "à avancer prudemment");
-        System.out.println("vous entendez au loin " +
-                "le sage vous dire : 'si tu es " +
+        System.out.println("tu entends au loin " +
+                "le sage te dire : 'si tu es " +
                 "perdu tape arcanes sacrés'");
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
@@ -28,7 +28,7 @@ public class EnterCavern {
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<taillePlateau; i++) {
             Salle salle = new Salle();
-            plateaux.add(salle);
+            plateaux.add(salle.setSalle());
         }
         int position = 0;
         /*
