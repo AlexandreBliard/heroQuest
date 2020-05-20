@@ -1,12 +1,15 @@
 package com.heroquest.dungeon;
 
 import com.heroquest.pj.CommunPeople;
+import com.heroquest.pnj.Dragon;
+import com.heroquest.pnj.Goblins;
+import com.heroquest.pnj.Sorcerer;
 import com.heroquest.stuff.Weapons;
 
 public class Salle {
     protected String salle = description();
     protected int index;
-    protected CommunPeople ennemis;
+    protected CommunPeople ennemis = ennemy();
     protected Weapons reward;
 
     public String description() {
@@ -63,6 +66,19 @@ public class Salle {
         }
         return "la sélection de description de salle " +
                 "ne fonctionne pas";
+    }
+
+    public CommunPeople ennemy() {
+        ListEnnemy adversaire = ListEnnemy.RandomEnnemy();
+        switch (adversaire) {
+            case DRAGONS:
+                return new Dragon();
+            case SORCIER:
+                return new Sorcerer();
+            case GOBELINS:
+                return new Goblins();
+        }
+        return new Goblins();
     }
 /*SETTER------SETTER------SETTER------SETTER------*/
 
