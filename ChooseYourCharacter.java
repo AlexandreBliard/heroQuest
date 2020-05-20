@@ -18,7 +18,6 @@ public class ChooseYourCharacter {
                 + " es-tu un vaillant guerrier " +
                 "ou un rusé magicien ?");
         CommunPeople aventurier = null;
-        CommunPeople ennemy = null;
         boolean enigme = false;
         do {
             System.out.println("dites au sage si " +
@@ -27,9 +26,7 @@ public class ChooseYourCharacter {
             String classePJ = keyboard.nextLine();
             if (classePJ.equals("GUERRIER") || classePJ.equals("MAGICIEN")) {
                 aventurier = createAventurer(classePJ, namePJ);
-                ennemy = new Goblins();
                 System.out.println(aventurier);
-                System.out.println(ennemy);
                 enigme = true;
                 return aventurier;
             } else if (classePJ.equals("guerrier") || classePJ.equals("magicien")) {
