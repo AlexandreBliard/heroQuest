@@ -28,9 +28,8 @@ public class EnterCavern {
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<taillePlateau; i++) {
             Salle salle = new Salle();
-            DescriptionChoice description = new DescriptionChoice();
             plateaux.add(salle);
-            salle.setDescription(description.description());
+            salle.setDescription(salle.description());
         }
         int position = 0;
         /*
