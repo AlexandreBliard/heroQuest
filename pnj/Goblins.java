@@ -9,6 +9,6 @@ public class Goblins extends Ennemy{
         super(type, name, life, weapons, xp, gold);
     }
     public Goblins() {
-        this("gobelinoïde", "gobelins", 1, new Stick(), 2, 4);
+        this("gobelinoïde", " un gobelin", 1, new Stick(), 2, 4);
     }
 }

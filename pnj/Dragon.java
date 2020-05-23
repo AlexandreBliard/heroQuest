@@ -9,6 +9,6 @@ public class Dragon extends Ennemy{
         super(type, name, life, weapons, xp, gold);
     }
     public Dragon() {
-        this ("dragon", "dragon", 10, new Claws(), 12, 50);
+        this ("dragon", " un dragon", 10, new Claws(), 12, 50);
     }
 }
