@@ -1,6 +1,6 @@
 package com.heroquest.dungeon;
 
-public class DescriptionSalle extends Salle{
+public class DescriptionSalle{
 
     public String description() {
         Description description = Description.randomDescription();

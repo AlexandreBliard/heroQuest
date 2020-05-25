@@ -3,7 +3,7 @@ package com.heroquest.pj;
 import com.heroquest.dungeon.Salle;
 import com.heroquest.stuff.Weapons;
 
-public abstract class Ennemy extends Salle {
+public abstract class CommunPeople{
 
 
 /*---ATTRIBUTS------ATTRIBUTS------ATTRIBUTS------*/
@@ -14,7 +14,7 @@ public abstract class Ennemy extends Salle {
 
 /*--------- CONSTRUCTEURS  CONSTRUCTEURS   CONSTRUCTEURS ------------*/
 
-    public Ennemy(String type, String name, int life, Weapons weapons) {
+    public CommunPeople(String type, String name, int life, Weapons weapons) {
         this.type = type;
         this.name = name;
         this.life = life;

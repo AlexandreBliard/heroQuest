@@ -1,7 +1,7 @@
 package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
-import com.heroquest.pj.Ennemy;
+import com.heroquest.pj.CommunPeople;
 import com.heroquest.pnj.Goblins;
 
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class EnterCavern {
     public EnterCavern() {
     }
     Menu menu = new Menu();
-    public void enterCavern(Ennemy aventurier, Scanner keyboard) {
+    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("vous êtes dans la caverne, " +
                 "vous voyez un long couloir sombre " +
                 "que la clarté de l'extérieur " +
@@ -30,21 +30,12 @@ public class EnterCavern {
         Integer nbSorcerer = taillePlateau / 8;
         Integer nbDragon = taillePlateau / 20;
         DescriptionSalle texte = new DescriptionSalle();
-        Ennemy goblins = new Goblins();
+        RandomEnnemy ennemy = new RandomEnnemy();
+        CommunPeople goblins = new Goblins();
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<=taillePlateau; i++) {//boucle créations du plateaux
-            Salle salle = new Salle();
-            salle.setDescription(texte.description());//description aléatoire
-            salle.setEnnemis(salle.enemy());//chaque salle contient NoOne
-            int randomIndexPlateau = 0;
-            RandomNumber randomNumber = new RandomNumber();
-            if (i == taillePlateau) {//dès que toutes les salles sont crées on implémente les ennemis
+            Salle salle = new Salle(texte.description(), ennemy.randomEnnemy());
 
-                for (int j = 0; j<nbGobelin; j++) {
-                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbGobelin);
-                    plateaux.set(randomIndexPlateau, salle.setEnnemis(goblins));
-                }
-            }
             plateaux.add(salle);
          }
         System.out.println(plateaux);
@@ -74,6 +65,17 @@ public class EnterCavern {
             noOne = taille plateau(nb gobelins + nb sorciers + nb dragons)
             Sinon il n'y a QUE des noOne et après on en met pardessus, oui
             c'est plus simple et logique. donc dans Salle.java, ennemy = new noOne
+
+            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
+            int randomIndexPlateau = 0;
+            RandomNumber randomNumber = new RandomNumber();
+            if (i == taillePlateau) {//dès que toutes les salles sont crées on implémente les ennemis
+
+                for (int j = 0; j<nbGobelin; j++) {
+                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbGobelin);
+                    plateaux.set(randomIndexPlateau, salle.setEnnemis(goblins));
+                }
+            }
         */
         do {
             String input = keyboard.nextLine();

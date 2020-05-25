@@ -1,11 +1,11 @@
 package com.heroquest.option;
 
-import com.heroquest.pj.Ennemy;
+import com.heroquest.pj.CommunPeople;
 
 import java.util.Scanner;
 
 public class OneOptionForGouvernAll {
-    public void chooseSpecialRules(Ennemy aventurier, Scanner keyboard) {
+    public void chooseSpecialRules(CommunPeople aventurier, Scanner keyboard) {
         LeaveCavern leave = new LeaveCavern();
         ChangeName name = new ChangeName();
         System.out.println("tu invoques les " +

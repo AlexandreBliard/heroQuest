@@ -1,12 +1,12 @@
 package com.heroquest.option;
 
-import com.heroquest.pj.Ennemy;
+import com.heroquest.pj.CommunPeople;
 
 import java.util.Scanner;
 
 public class Choice {
 
-    public boolean choice(Ennemy aventurier, Scanner keyboard) {
+    public boolean choice(CommunPeople aventurier, Scanner keyboard) {
         boolean reponse = false;
         boolean choice = false;
         do {

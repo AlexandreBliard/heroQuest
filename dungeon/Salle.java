@@ -1,76 +1,20 @@
 package com.heroquest.dungeon;
 
-import com.heroquest.pj.Ennemy;
+import com.heroquest.pj.CommunPeople;
 import com.heroquest.pnj.NoOne;
+import com.heroquest.stuff.Stick;
 import com.heroquest.stuff.Weapons;
 
 public class Salle {
     protected String description;
-    protected Ennemy ennemis;
+    protected CommunPeople ennemis;
     protected Weapons reward;
 
 
 /*RETEX--------RETEX--------RETEX--------RETEX--------RETEX--------RETEX--------
 * ne pas mettre une valeur directement dans la déclaration d'attribut
 * */
-public String description() {
-    Description description = Description.randomDescription();
-    switch (description) {
-        case SALLE:
-            return "dans une pièce vétuste dépouillé " +
-                    "de tout meuble";
-        case COULOIR:
-            return "dans un long couloir sombre, tu évites les " +
-                    " stalactites grâce à la faible clarté de ta torche.";
 
-        case GDSALLE:
-            return "dans une grande salle avec " +
-                    "une table dressé. La nourriture " +
-                    "n'est pas comestible pour un humain " +
-                    " sauf si tu es cannibale.";
-
-        case VESTIBULE:
-            return "dans une petite pièce exigu.";
-
-        case ARENE:
-            return "dans une pièce avec " +
-                    "du sable sur le sol, de hauts murs " +
-                    "parsemé de tribunes. Tu remarques " +
-                    "du sang séché sur le sable.";
-
-        case CUISINE:
-            return "dans une pièce à l'incroyable " +
-                    "puanteur. Tu entends les mouches " +
-                    "voler autour d'amas de viandes " +
-                    "défraichis qui pendant " +
-                    "à des crochets.";
-
-        case PRISON:
-            return "dans un couloir avec des " +
-                    "cachots de part et d'autres. Il n'y a " +
-                    "plus rien de vivant dans ces " +
-                    "cellules si ce n'est " +
-                    "les rats.";
-
-        case OUBLIETTE:
-            return "dans un couloir avec " +
-                    "un trou béant en son centre. Tu arrives " +
-                    "facilement à contourner cette oubliette.";
-
-        case PIEGE:
-            return "dans un couloir et tu vois " +
-                    "un aventurier mort, transpercé d'une " +
-                    "lance. Espérons qu'il ne reste pas " +
-                    "trop de piège encore actif.";
-
-    }
-    return "la sélection de description de salle " +
-            "ne fonctionne pas";
-}
-
-    public Ennemy enemy() {
-        return new NoOne();
-    }
 
 /*SETTER------SETTER------SETTER------SETTER------*/
 
@@ -78,7 +22,7 @@ public String description() {
         this.description = description;
     }
 
-    public Ennemy setEnnemis(Ennemy ennemis) {
+    public CommunPeople setEnnemis(CommunPeople ennemis) {
         this.ennemis = ennemis;
         return ennemis;
     }
@@ -92,7 +36,7 @@ public String description() {
         return description;
     }
 
-    public Ennemy getEnnemis() {
+    public CommunPeople getEnnemis() {
         return ennemis;
     }
 
@@ -101,7 +45,16 @@ public String description() {
     }
     /*CONSTRUCTEUR------CONSTRUCTEUR------CONSTRUCTEUR------*/
 
-
+    public Salle(String description, CommunPeople ennemis, Weapons reward) {
+        this.description = description;
+        this.ennemis = ennemis;
+        this.reward = reward;
+    }
+    public Salle(String description, CommunPeople ennemis) {
+        this.description = description;
+        this.ennemis = ennemis;
+        this.reward = new Stick();
+    }
 
     /*toSTRING ------toSTRING ------toSTRING ------*/
     @Override
