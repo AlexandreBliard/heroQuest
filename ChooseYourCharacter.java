@@ -1,14 +1,13 @@
 package com.heroquest;
 
-import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.Ennemy;
 import com.heroquest.pj.Warrior;
 import com.heroquest.pj.Wizard;
-import com.heroquest.pnj.Goblins;
 
 import java.util.Scanner;
 
 public class ChooseYourCharacter {
-    public CommunPeople chooseYourCharacter(Scanner keyboard) {
+    public Ennemy chooseYourCharacter(Scanner keyboard) {
         System.out.println("bonjour à toi " +
                 "aventurier, comment t'appeles-tu ? " );
         System.out.println("dites au sage votre " +
@@ -17,7 +16,7 @@ public class ChooseYourCharacter {
         System.out.println("Bonjour à toi " + namePJ
                 + " es-tu un vaillant guerrier " +
                 "ou un rusé magicien ?");
-        CommunPeople aventurier = null;
+        Ennemy aventurier = null;
         boolean enigme = false;
         do {
             System.out.println("dites au sage si " +
@@ -39,7 +38,7 @@ public class ChooseYourCharacter {
         return aventurier;
     }
 
-    public CommunPeople createAventurer(String nomDeClasse, String namePJ) {
+    public Ennemy createAventurer(String nomDeClasse, String namePJ) {
         if (nomDeClasse.equals("GUERRIER")) {
             return new Warrior(namePJ);
         }else {

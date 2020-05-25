@@ -1,12 +1,11 @@
 package com.heroquest.option;
 
-import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.Ennemy;
 
-import javax.xml.transform.Source;
 import java.util.Scanner;
 
 public class ChangeName {
-    public void changeName(CommunPeople aventurier, Scanner keyboard) {
+    public void changeName(Ennemy aventurier, Scanner keyboard) {
         System.out.println("quel nom veux-tu " +
                 "prendre ?");
         System.out.println("tapez votre " +

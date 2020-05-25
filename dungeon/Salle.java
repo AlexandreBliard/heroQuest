@@ -1,12 +1,12 @@
 package com.heroquest.dungeon;
 
-import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.Ennemy;
 import com.heroquest.pnj.NoOne;
 import com.heroquest.stuff.Weapons;
 
 public class Salle {
-    protected String description;
-    protected CommunPeople ennemis;
+    protected String description = description();
+    protected Ennemy ennemis;
     protected Weapons reward;
 
 
@@ -68,8 +68,8 @@ public String description() {
             "ne fonctionne pas";
 }
 
-    public CommunPeople enemy() {
-        return setEnnemis(new NoOne());
+    public Ennemy enemy() {
+        return new NoOne();
     }
 
 /*SETTER------SETTER------SETTER------SETTER------*/
@@ -78,7 +78,7 @@ public String description() {
         this.description = description;
     }
 
-    public CommunPeople setEnnemis(CommunPeople ennemis) {
+    public Ennemy setEnnemis(Ennemy ennemis) {
         this.ennemis = ennemis;
         return ennemis;
     }
@@ -92,7 +92,7 @@ public String description() {
         return description;
     }
 
-    public CommunPeople getEnnemis() {
+    public Ennemy getEnnemis() {
         return ennemis;
     }
 

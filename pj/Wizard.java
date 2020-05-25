@@ -4,7 +4,7 @@ import com.heroquest.stuff.MagicProjectile;
 import com.heroquest.stuff.Weapons;
 
 
-public class Wizard extends CommunPeople{
+public class Wizard extends Ennemy {
 
     public Wizard(String name, Weapons weapons) {
         super ("magicien", name, 3, weapons);

@@ -1,7 +1,7 @@
 package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
-import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.Ennemy;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public class AtTheEntry {
 
     Menu menu = new Menu();
 
-    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) {
+    public void atTheEntry(Ennemy aventurier, Scanner keyboard) {
         System.out.println("te voilà donc " +
                 "prêt à pénétrer dans la " +
                 "caverne qui se trouve " +

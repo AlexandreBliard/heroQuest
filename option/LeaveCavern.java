@@ -1,7 +1,7 @@
 package com.heroquest.option;
 
 import com.heroquest.Menu;
-import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.Ennemy;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class LeaveCavern{
 
     }
 
-    public void leaveCavern(CommunPeople aventurier, Scanner keyboard) {
+    public void leaveCavern(Ennemy aventurier, Scanner keyboard) {
         System.out.println("attention vous " +
                 "allez quitter ce jeu génial " +
                 "taper oui sur le clavier " +

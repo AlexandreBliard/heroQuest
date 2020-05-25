@@ -1,9 +1,8 @@
 package com.heroquest.pnj;
 
-import com.heroquest.pj.CommunPeople;
 import com.heroquest.stuff.Weapons;
 
-public abstract class Ennemy extends CommunPeople {
+public abstract class Ennemy extends com.heroquest.pj.Ennemy {
 
     //nouveau attributs
     int xp;//xp gagnés quand on a vaincu l'ennemi

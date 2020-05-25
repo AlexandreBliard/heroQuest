@@ -1,13 +1,13 @@
 package com.heroquest;
 
-import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.Ennemy;
 
 import java.util.Scanner;
 
 public class PlayGame {
     public void playGame(Scanner keyboard) {
         Menu menu = new Menu();
-        CommunPeople aventurier = menu.chooseYouCharacter(keyboard);
+        Ennemy aventurier = menu.chooseYouCharacter(keyboard);
         menu.atTheEntry(aventurier, keyboard);
     }
 }

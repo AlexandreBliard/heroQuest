@@ -1,7 +1,8 @@
 package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
-import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.Ennemy;
+import com.heroquest.pnj.Goblins;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,7 +12,7 @@ public class EnterCavern {
     public EnterCavern() {
     }
     Menu menu = new Menu();
-    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
+    public void enterCavern(Ennemy aventurier, Scanner keyboard) {
         System.out.println("vous êtes dans la caverne, " +
                 "vous voyez un long couloir sombre " +
                 "que la clarté de l'extérieur " +
@@ -24,13 +25,30 @@ public class EnterCavern {
                 "perdu tape arcanes sacrés'");
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
-        Integer taillePlateau = 63;
+        int taillePlateau = 63;
+        Integer nbGobelin = taillePlateau / 3;
+        int nbSorcerer = taillePlateau / 8;
+        int nbDragon = taillePlateau / 20;
+        Ennemy goblins = new Goblins();
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
-        for (int i = 0; i<taillePlateau; i++) {
+        for (int i = 0; i<taillePlateau; i++) {//boucle créations du plateaux
             Salle salle = new Salle();
             plateaux.add(salle);
-            salle.setDescription(salle.description());
-        }
+            salle.setEnnemis(salle.enemy());//chaque salle contient NoOne
+            if (plateaux.size() == taillePlateau) {
+                /*
+                 * développer un méthode qui attend en paramètre un chiffre et créer une méthode
+                 * qui choisira aléatoirement ce chiffre en paramètre, ce chiffre devra être
+                 * retourné vers index de tableau.
+                 * */
+                for (int j = 0; j<nbGobelin; j++) {
+                    plateaux.set(j, salle.setEnnemis(goblins));
+                }
+            }
+         }
+        System.out.println(plateaux);
+
+
         int position = 0;
         /*
         ----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----
@@ -49,10 +67,9 @@ public class EnterCavern {
              random taille Plateau + taillePlateau*0,75
              }else {fais ta vie}
              il faut aussi vérifier que le ArrayList est vide :
-            if (plateaux.isEmpty(randomSalle) cela ne fonctionne pas que je remplis toute les cases
-            if (plateaux valeur ennemy === noOne) {so create a new ennemy}
-            else {randomSalle ++ et recommence le test}
-            les promesses ça existe en JAVA ?
+            while (plateaux valeur ennemy == noOne) { create a new ennemy}
+
+
             noOne = taille plateau(nb gobelins + nb sorciers + nb dragons)
             Sinon il n'y a QUE des noOne et après on en met pardessus, oui
             c'est plus simple et logique. donc dans Salle.java, ennemy = new noOne
