@@ -5,7 +5,7 @@ import com.heroquest.pnj.NoOne;
 import com.heroquest.stuff.Weapons;
 
 public class Salle {
-    protected String description = description();
+    protected String description;
     protected Ennemy ennemis;
     protected Weapons reward;
 

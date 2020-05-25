@@ -26,25 +26,26 @@ public class EnterCavern {
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
         int taillePlateau = 63;
-        Integer nbGobelin = taillePlateau / 3;
-        int nbSorcerer = taillePlateau / 8;
-        int nbDragon = taillePlateau / 20;
+        int nbGobelin = taillePlateau / 3;
+        Integer nbSorcerer = taillePlateau / 8;
+        Integer nbDragon = taillePlateau / 20;
+        DescriptionSalle texte = new DescriptionSalle();
         Ennemy goblins = new Goblins();
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
-        for (int i = 0; i<taillePlateau; i++) {//boucle créations du plateaux
+        for (int i = 0; i<=taillePlateau; i++) {//boucle créations du plateaux
             Salle salle = new Salle();
-            plateaux.add(salle);
+            salle.setDescription(texte.description());//description aléatoire
             salle.setEnnemis(salle.enemy());//chaque salle contient NoOne
-            if (plateaux.size() == taillePlateau) {
-                /*
-                 * développer un méthode qui attend en paramètre un chiffre et créer une méthode
-                 * qui choisira aléatoirement ce chiffre en paramètre, ce chiffre devra être
-                 * retourné vers index de tableau.
-                 * */
+            int randomIndexPlateau = 0;
+            RandomNumber randomNumber = new RandomNumber();
+            if (i == taillePlateau) {//dès que toutes les salles sont crées on implémente les ennemis
+
                 for (int j = 0; j<nbGobelin; j++) {
-                    plateaux.set(j, salle.setEnnemis(goblins));
+                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbGobelin);
+                    plateaux.set(randomIndexPlateau, salle.setEnnemis(goblins));
                 }
             }
+            plateaux.add(salle);
          }
         System.out.println(plateaux);
 
