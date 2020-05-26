@@ -8,6 +8,6 @@ public class NoOne extends Ennemy{
         super(type, name, life, weapons, xp, gold);
     }
     public NoOne() {
-        this("personne", "personne", 0, new NoWeapons(), 0, 0);
+        this("personne", " personne", 0, new NoWeapons(), 0, 0);
     }
 }

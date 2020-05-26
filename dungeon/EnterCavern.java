@@ -14,7 +14,7 @@ public class EnterCavern {
     public EnterCavern() {
     }
     Menu menu = new Menu();
-    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
+    public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
         System.out.println("vous êtes dans la caverne, " +
                 "vous voyez un long couloir sombre " +
                 "que la clarté de l'extérieur " +
@@ -46,7 +46,8 @@ public class EnterCavern {
                 int randomIndexPlateau = 0;
                 RandomNumber randomNumber = new RandomNumber();
                 AddRandomMonster random = new AddRandomMonster();
-                random.addRandomMonster(nbDragon, texte, dragon, randomIndexPlateau, randomNumber, plateaux, taillePlateau, fqDragon);
+                random.addRandomMonster(nbDragon, texte, dragon, randomIndexPlateau,
+                        randomNumber, plateaux, taillePlateau, fqDragon);
                 random.addRandomMonster(nbSorcerer, texte, sorcerer, randomIndexPlateau, randomNumber, plateaux, taillePlateau, fqSorcerer);
                 random.addRandomMonster(nbGobelin, texte, goblins, randomIndexPlateau, randomNumber, plateaux, taillePlateau, fqGobelin);
             }
@@ -74,14 +75,7 @@ public class EnterCavern {
             while (plateaux valeur ennemy == noOne) { create a new ennemy}
 
 
-             J'arrive à générer aléatoirement une description de salle et un
-            ennemi mais je n'arrive pas encore à choisir la fréquence de ce dernier.
-            Je pense qu'il faut que je crée tout un plateau avec l'ennemi noOne
-            (qui correspond à il n'y a personne dans cette salle) + description de la
-            salle et que quand j'assigne les monstres il me faut un constructeur
-            qui prendra tout de suite en compte l'ennemi désiré via un paramètre
-             de constructeur, le tout sur une boucle for. Ainsi je recréer une salle
-             AVEC une description. L'idée est de pouvoir tester s'il y a un ennemi
+              L'idée est de pouvoir tester s'il y a un ennemi
              dans cette salle. Si ennemi => on va plus loin. Si noOne => nouvel ennemi.
              Mais comme dit hier avec Flo cela pourrait être sans fin par moment,
              du coup associé la méthode shuffle() à

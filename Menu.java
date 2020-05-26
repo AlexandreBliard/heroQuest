@@ -27,12 +27,12 @@ public class Menu {
     }
 
     //commande pour confirmer le début de la partie.
-    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) {
+    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
         AtTheEntry enter = new AtTheEntry();
         enter.atTheEntry(aventurier, keyboard);
     }
     //commnande pour rentrer dans la caverne
-    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
+    public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
         EnterCavern game = new EnterCavern();
         game.enterCavern(aventurier, keyboard);
     }
