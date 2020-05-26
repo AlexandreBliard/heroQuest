@@ -2,7 +2,9 @@ package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
+import com.heroquest.pnj.Dragon;
 import com.heroquest.pnj.Goblins;
+import com.heroquest.pnj.Sorcerer;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -27,20 +29,40 @@ public class EnterCavern {
                 "faire avancer votre personnage");
         int taillePlateau = 63;
         int nbGobelin = taillePlateau / 3;
-        Integer nbSorcerer = taillePlateau / 8;
-        Integer nbDragon = taillePlateau / 20;
+        int nbSorcerer = taillePlateau / 8;
+        int nbDragon = taillePlateau / 20;
         DescriptionSalle texte = new DescriptionSalle();
-        RandomEnnemy ennemy = new RandomEnnemy();
         CommunPeople goblins = new Goblins();
+        CommunPeople sorcerer = new Sorcerer();
+        CommunPeople dragon = new Dragon();
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<=taillePlateau; i++) {//boucle créations du plateaux
-            Salle salle = new Salle(texte.description(), ennemy.randomEnnemy());
-
+            Salle salle = new Salle(texte.description());//salle avec description aléatoire et sans ennemi
             plateaux.add(salle);
+            if (i == taillePlateau) {
+                int randomIndexPlateau = 0;
+                RandomNumber randomNumber = new RandomNumber();
+                //ajout dragon
+                for (int l = 0; l<=nbDragon; l++) {
+                    Salle salleDra = new Salle(texte.description(), dragon);
+                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbDragon);
+                    plateaux.set(randomIndexPlateau, salleDra);
+                }
+                //ajout sorcier
+                for (int k = 0; k<=nbSorcerer; k++) {
+                    Salle salleSor = new Salle(texte.description(), sorcerer);
+                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbSorcerer);
+                    plateaux.set(randomIndexPlateau, salleSor);
+                }
+                //ajout de gobelins
+                for (int j = 0; j<=nbGobelin; j++) {
+                    Salle salleGob = new Salle(texte.description(), goblins);
+                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbGobelin);
+                    plateaux.set(randomIndexPlateau, salleGob);
+                }
+            }
          }
         System.out.println(plateaux);
-
-
         int position = 0;
         /*
         ----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----
@@ -58,9 +80,22 @@ public class EnterCavern {
             OU ALORS if (random taille Plateau < taillePlateau *0,75){
              random taille Plateau + taillePlateau*0,75
              }else {fais ta vie}
+
              il faut aussi vérifier que le ArrayList est vide :
             while (plateaux valeur ennemy == noOne) { create a new ennemy}
 
+             J'arrive à générer aléatoirement une description de salle et un
+            ennemi mais je n'arrive pas encore à choisir la fréquence de ce dernier.
+            Je pense qu'il faut que je crée tout un plateau avec l'ennemi noOne
+            (qui correspond à il n'y a personne dans cette salle) + description de la
+            salle et que quand j'assigne les monstres il me faut un constructeur
+            qui prendra tout de suite en compte l'ennemi désiré via un paramètre
+             de constructeur, le tout sur une boucle for. Ainsi je recréer une salle
+             AVEC une description. L'idée est de pouvoir tester s'il y a un ennemi
+             dans cette salle. Si ennemi => on va plus loin. Si noOne => nouvel ennemi.
+             Mais comme dit hier avec Flo cela pourrait être sans fin par moment,
+             du coup associé la méthode shuffle() à
+            cette solution afin que la part  CPU ne soit pas trop importante.
 
             noOne = taille plateau(nb gobelins + nb sorciers + nb dragons)
             Sinon il n'y a QUE des noOne et après on en met pardessus, oui

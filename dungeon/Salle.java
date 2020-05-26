@@ -11,11 +11,6 @@ public class Salle {
     protected Weapons reward;
 
 
-/*RETEX--------RETEX--------RETEX--------RETEX--------RETEX--------RETEX--------
-* ne pas mettre une valeur directement dans la déclaration d'attribut
-* */
-
-
 /*SETTER------SETTER------SETTER------SETTER------*/
 
     public void setDescription(String description) {
@@ -50,6 +45,15 @@ public class Salle {
         this.ennemis = ennemis;
         this.reward = reward;
     }
+/*constructeur pour la création des cases avec descriptions
+* et sans monstres*/
+    public Salle(String description) {
+        this.description = description;
+        this.ennemis = new NoOne();
+        this.reward = new Stick();
+    }
+
+    /*constructeur temporaire tant que reward non paramétré*/
     public Salle(String description, CommunPeople ennemis) {
         this.description = description;
         this.ennemis = ennemis;
