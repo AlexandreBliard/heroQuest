@@ -28,9 +28,12 @@ public class EnterCavern {
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
         int taillePlateau = 63;
+        double fqGobelin = 0.90;
+        double fqSorcerer = 0.65;
+        double fqDragon = 0.15;
         int nbGobelin = taillePlateau / 4;
-        int nbSorcerer = taillePlateau / 7;
-        int nbDragon = taillePlateau / 20;
+        int nbSorcerer = taillePlateau / 8;
+        int nbDragon = taillePlateau / 16;
         DescriptionSalle texte = new DescriptionSalle();
         CommunPeople goblins = new Goblins();
         CommunPeople sorcerer = new Sorcerer();
@@ -43,9 +46,9 @@ public class EnterCavern {
                 int randomIndexPlateau = 0;
                 RandomNumber randomNumber = new RandomNumber();
                 AddRandomMonster random = new AddRandomMonster();
-                random.addRandomMonster(nbDragon, texte, dragon, randomIndexPlateau, randomNumber, plateaux);
-                random.addRandomMonster(nbSorcerer, texte, sorcerer, randomIndexPlateau, randomNumber, plateaux);
-                random.addRandomMonster(nbGobelin, texte, goblins, randomIndexPlateau, randomNumber, plateaux);
+                random.addRandomMonster(nbDragon, texte, dragon, randomIndexPlateau, randomNumber, plateaux, taillePlateau, fqDragon);
+                random.addRandomMonster(nbSorcerer, texte, sorcerer, randomIndexPlateau, randomNumber, plateaux, taillePlateau, fqSorcerer);
+                random.addRandomMonster(nbGobelin, texte, goblins, randomIndexPlateau, randomNumber, plateaux, taillePlateau, fqGobelin);
             }
          }
         System.out.println(plateaux);
@@ -88,15 +91,7 @@ public class EnterCavern {
             c'est plus simple et logique. donc dans Salle.java, ennemy = new noOne
 
             TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-            int randomIndexPlateau = 0;
-            RandomNumber randomNumber = new RandomNumber();
-            if (i == taillePlateau) {//dès que toutes les salles sont crées on implémente les ennemis
 
-                for (int j = 0; j<nbGobelin; j++) {
-                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbGobelin);
-                    plateaux.set(randomIndexPlateau, salle.setEnnemis(goblins));
-                }
-            }
         */
         do {
             String input = keyboard.nextLine();
