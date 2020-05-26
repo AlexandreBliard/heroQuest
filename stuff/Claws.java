@@ -5,6 +5,6 @@ public class Claws extends Weapons {
         super(Cdamage, Cname);
     }
     public Claws() {
-        this(8, "une patte pourvu de griffes");
+        this(8, " qui est armé d'une patte pourvu de griffes");
     }
 }

@@ -73,6 +73,7 @@ public class EnterCavern {
              il faut aussi vérifier que le ArrayList est vide :
             while (plateaux valeur ennemy == noOne) { create a new ennemy}
 
+
              J'arrive à générer aléatoirement une description de salle et un
             ennemi mais je n'arrive pas encore à choisir la fréquence de ce dernier.
             Je pense qu'il faut que je crée tout un plateau avec l'ennemi noOne
