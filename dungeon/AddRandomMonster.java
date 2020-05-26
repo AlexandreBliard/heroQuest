@@ -9,7 +9,7 @@ public class AddRandomMonster {
                                  CommunPeople ennemy, int randomIndexPlateau,
                                  RandomNumber randomNumber, ArrayList plateaux,
                                  int taillePlateau, double fq) {
-        for (int i = 0; i<= nbMonstres; i++) {
+        for (int i = 0; i< nbMonstres; i++) {
             Salle salle = new Salle(texte.description(), ennemy);
             randomIndexPlateau = (int) randomNumber.RandomNumber(taillePlateau, fq);
             plateaux.set(randomIndexPlateau, salle);
