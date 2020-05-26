@@ -53,6 +53,7 @@ public class Salle {
         this.reward = new Stick();
     }
 
+
     /*constructeur temporaire tant que reward non paramétré*/
     public Salle(String description, CommunPeople ennemis) {
         this.description = description;

@@ -28,8 +28,8 @@ public class EnterCavern {
         System.out.println("appuyer sur entrée pour " +
                 "faire avancer votre personnage");
         int taillePlateau = 63;
-        int nbGobelin = taillePlateau / 3;
-        int nbSorcerer = taillePlateau / 8;
+        int nbGobelin = taillePlateau / 4;
+        int nbSorcerer = taillePlateau / 7;
         int nbDragon = taillePlateau / 20;
         DescriptionSalle texte = new DescriptionSalle();
         CommunPeople goblins = new Goblins();
@@ -42,24 +42,10 @@ public class EnterCavern {
             if (i == taillePlateau) {
                 int randomIndexPlateau = 0;
                 RandomNumber randomNumber = new RandomNumber();
-                //ajout dragon
-                for (int l = 0; l<=nbDragon; l++) {
-                    Salle salleDra = new Salle(texte.description(), dragon);
-                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbDragon);
-                    plateaux.set(randomIndexPlateau, salleDra);
-                }
-                //ajout sorcier
-                for (int k = 0; k<=nbSorcerer; k++) {
-                    Salle salleSor = new Salle(texte.description(), sorcerer);
-                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbSorcerer);
-                    plateaux.set(randomIndexPlateau, salleSor);
-                }
-                //ajout de gobelins
-                for (int j = 0; j<=nbGobelin; j++) {
-                    Salle salleGob = new Salle(texte.description(), goblins);
-                    randomIndexPlateau = (int) randomNumber.RandomNumber(nbGobelin);
-                    plateaux.set(randomIndexPlateau, salleGob);
-                }
+                AddRandomMonster random = new AddRandomMonster();
+                random.addRandomMonster(nbDragon, texte, dragon, randomIndexPlateau, randomNumber, plateaux);
+                random.addRandomMonster(nbSorcerer, texte, sorcerer, randomIndexPlateau, randomNumber, plateaux);
+                random.addRandomMonster(nbGobelin, texte, goblins, randomIndexPlateau, randomNumber, plateaux);
             }
          }
         System.out.println(plateaux);
