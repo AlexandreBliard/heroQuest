@@ -80,6 +80,9 @@ public class EnterCavern {
                             " tu fais maintenant " +
                             aventurier.getAttack().getDamage() +
                             " points de dégâts");
+                }else {
+                    System.out.println("c'est ton choix \n " +
+                            "tape entrée pour continuer");
                 };
             }else {
                 System.out.println("petite faute de frappe non ?");
