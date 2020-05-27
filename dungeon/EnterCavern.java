@@ -1,6 +1,7 @@
 package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
+import com.heroquest.option.Choice;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pnj.Dragon;
 import com.heroquest.pnj.Goblins;
@@ -67,10 +68,23 @@ public class EnterCavern {
                 System.out.println("avance avec entrée");
             }else if (input.equals("arcanes sacrés")) {
                 menu.options(aventurier, keyboard);
+            }else if (input.equals("fouille")){
+                System.out.println("En fouillant tu découvres" +
+                        plateaux.get(position).getReward().getName() +
+                 "\n veux-tu t'en équiper ? oui/non");
+                Choice booleen = new Choice();
+                if (booleen.choice(aventurier, keyboard)) {
+                    aventurier.setAttack(plateaux.get(position).getReward());
+                    System.out.println("tu as équipé " +
+                            aventurier.getAttack().getName() +
+                            " tu fais maintenant " +
+                            aventurier.getAttack().getDamage() +
+                            " points de dégâts");
+                };
             }else {
                 System.out.println("petite faute de frappe non ?");
             }
-        }while (position <= plateaux.size());
+        }while (position < plateaux.size());
         System.out.println("Sceptre de Feu acquis");
         System.out.println("voulez-vous rejouer ? " +
                 "oui / non ");

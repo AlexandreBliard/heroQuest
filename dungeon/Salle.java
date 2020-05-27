@@ -66,10 +66,7 @@ public class Salle {
         return "Tu pénètres " +
                 description +
                  "\n" +
-                " il y a " + ennemis +
-                "\n" +
-                " et il te semble apercevoir "
-                + reward.getName() ;
+                " il y a " + ennemis;
     }
 
 }
