@@ -8,6 +8,6 @@ public class Sorcerer extends Ennemy{
         super(type, name, life, weapons, xp, gold);
     }
     public Sorcerer() {
-        this("sorcerer", " un sorcier", 3, new EnergyStick(), 4, 7);
+        this("ennemy", " un sorcier", 3, new EnergyStick(), 4, 7);
     }
 }
