@@ -49,7 +49,7 @@ public class Menu {
         LeaveCavern leave = new LeaveCavern();
         leave.leaveCavern(aventurier, keyboard);
     }
-    //quand un booléen est demandé, façon rapide de faire
+    //quand un booléen est demandé, façon rapide de le faire
     public boolean choice(CommunPeople aventurier, Scanner keyboard) {
         Choice choice = new Choice();
         return choice.choice(aventurier, keyboard);
