@@ -1,13 +1,12 @@
 package com.heroquest;
 
-import com.heroquest.dungeon.AtTheEntry;
-import com.heroquest.dungeon.Forward;
-import com.heroquest.dungeon.EnterCavern;
+import com.heroquest.dungeon.*;
 import com.heroquest.option.Choice;
 import com.heroquest.option.LeaveCavern;
 import com.heroquest.option.OneOptionForGouvernAll;
 import com.heroquest.pj.CommunPeople;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
@@ -31,10 +30,18 @@ public class Menu {
         AtTheEntry enter = new AtTheEntry();
         enter.atTheEntry(aventurier, keyboard);
     }
+
     //commnande pour rentrer dans la caverne
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
         EnterCavern game = new EnterCavern();
         game.enterCavern(aventurier, keyboard);
+    }
+
+    //commande pour avancer de salle en salle dans la caverne
+    public void inTheCavern(CommunPeople aventurier, Scanner keyboard,
+                            ArrayList<Salle> plateaux) throws NoSuchFieldException {
+        InTheCavern cavern = new InTheCavern();
+        cavern.inTheCavern(aventurier, keyboard, plateaux);
     }
 
     //commande pour quitter la partie
@@ -52,5 +59,17 @@ public class Menu {
     public Integer forward(int position) {
         Forward forward = new Forward();
         return forward.forward(position);
+    }
+
+    //création du plateau de jeu qui s'appelle caverne
+    public ArrayList<Salle> Cavern() throws NoSuchFieldException {
+        Cavern cavern = new Cavern();
+        return cavern.Cavern();
+    }
+
+    //début de l'aventure
+    public void startGame(Scanner keyboard) throws NoSuchFieldException {
+        PlayGame game = new PlayGame();
+        game.playGame(keyboard);
     }
 }
