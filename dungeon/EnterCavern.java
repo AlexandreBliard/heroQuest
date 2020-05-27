@@ -65,7 +65,7 @@ public class EnterCavern {
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("tu trouves le sceptre de Feu");
                 }
-                System.out.println("avance avec entrée");
+                System.out.println("avance avec entrée ou fouille la salle");
             }else if (input.equals("arcanes sacrés")) {
                 menu.options(aventurier, keyboard);
             }else if (input.equals("fouille")){
