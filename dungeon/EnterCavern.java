@@ -15,17 +15,16 @@ public class EnterCavern {
     }
     Menu menu = new Menu();
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
-        System.out.println("vous êtes dans la caverne, " +
+        System.out.println("vous êtes dans la caverne,\n " +
                 "vous voyez un long couloir sombre " +
                 "que la clarté de l'extérieur " +
                 "ne vous permet de voir que jusqu'à " +
-                "quelques mètres. tu allumes " +
-                "donc une torche et tu commences " +
-                "à avancer prudemment");
-        System.out.println("tu entends au loin " +
-                "le sage te dire : 'si tu es " +
-                "perdu tape arcanes sacrés'");
-        System.out.println("appuyer sur entrée pour " +
+                "quelques mètres. " +
+                "\nTu allumes donc une torche et tu commences " +
+                "à avancer prudemment." +
+                "\nTu entends au loin le sage te dire : 'si tu es " +
+                "perdu tape arcanes sacrés'" +
+                "\nAppuyer sur entrée pour " +
                 "faire avancer votre personnage");
         int taillePlateau = 63;
         double fqGobelin = 0.90;

@@ -39,7 +39,7 @@ public abstract class CommunPeople{
         return "regarde toi " + name +
                 " tu es un " + type +
                 " avec " + life + " points de vie, "
-                + "tu possèdes " + this.attack.getName() + " qui " +
+                + "\n" + "tu possèdes " + this.attack.getName() + " qui " +
                 "occasionne " + this.attack.getDamage() + " points " +
                 "de dégâts";
     /*this.attack = Cweapons et j'ai besoin de Cweapons mais

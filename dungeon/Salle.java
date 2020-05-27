@@ -2,8 +2,7 @@ package com.heroquest.dungeon;
 
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pnj.NoOne;
-import com.heroquest.stuff.Stick;
-import com.heroquest.stuff.Weapons;
+import com.heroquest.stuff.*;
 
 public class Salle {
     protected String description;
@@ -50,7 +49,7 @@ public class Salle {
     public Salle(String description) {
         this.description = description;
         this.ennemis = new NoOne();
-        this.reward = new Stick();
+        this.reward = new LongSword();
     }
 
 
@@ -58,7 +57,7 @@ public class Salle {
     public Salle(String description, CommunPeople ennemis) {
         this.description = description;
         this.ennemis = ennemis;
-        this.reward = new Stick();
+        this.reward = new HalfHandSword();
     }
 
     /*toSTRING ------toSTRING ------toSTRING ------*/
@@ -66,9 +65,11 @@ public class Salle {
     public String toString() {
         return "Tu pénètres " +
                 description +
+                 "\n" +
                 " il y a " + ennemis +
+                "\n" +
                 " et il te semble apercevoir "
-                + reward ;
+                + reward.getName() ;
     }
 
 }

@@ -22,7 +22,7 @@ public abstract class Ennemy extends CommunPeople {
 
     @Override
     public String toString() {
-        return "devant toi" + name +
+        return  "devant toi" + name +
                 attack.getName() +
                 ", que fais-tu ?";
     }

@@ -13,9 +13,9 @@ public class AtTheEntry {
         System.out.println("te voilà donc " +
                 "prêt à pénétrer dans la " +
                 "caverne qui se trouve " +
-                "derrière moi. Tout au bout " +
+                "derrière moi. \nTout au bout " +
                 "tu y trouveras le sceptre de " +
-                "Feu. Si tu me le ramènes tu " +
+                "Feu. \nSi tu me le ramènes tu " +
                 "auras 500 po et tous les trésors" +
                 "de cette caverne. Qu'en dis-tu ?");
         System.out.println("êtes-vous prêts à " +
