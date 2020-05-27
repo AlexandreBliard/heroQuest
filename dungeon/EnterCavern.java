@@ -74,12 +74,20 @@ public class EnterCavern {
                  "\n veux-tu t'en équiper ? oui/non");
                 Choice booleen = new Choice();
                 if (booleen.choice(aventurier, keyboard)) {
-                    aventurier.setAttack(plateaux.get(position).getReward());
-                    System.out.println("tu as équipé " +
-                            aventurier.getAttack().getName() +
-                            " tu fais maintenant " +
-                            aventurier.getAttack().getDamage() +
-                            " points de dégâts");
+                    if (plateaux.get(position).getReward().getPour().equals(aventurier.getType())) {
+                        /*le if vérifie si l'arme est bien pour cet aventurier*/
+                        aventurier.setAttack(plateaux.get(position).getReward());
+                        System.out.println("tu as équipé " +
+                                aventurier.getAttack().getName() +
+                                " tu fais maintenant " +
+                                aventurier.getAttack().getDamage() +
+                                " points de dégâts");
+                    } else {
+                        System.out.println("désolé " + aventurier.getName() +
+                                " mais cette "+ plateaux.get(position).getReward().getName() +
+                                " n'est pas faite pour les " + aventurier.getType() +
+                                "\n tape entrée pour continuer");
+                    }
                 }else {
                     System.out.println("c'est ton choix \n " +
                             "tape entrée pour continuer");
