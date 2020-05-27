@@ -1,9 +1,9 @@
 package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
-import com.heroquest.option.Choice;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pnj.Dragon;
+import com.heroquest.pnj.Ennemy;
 import com.heroquest.pnj.Goblins;
 import com.heroquest.pnj.Sorcerer;
 
@@ -15,6 +15,12 @@ public class EnterCavern {
     public EnterCavern() {
     }
     Menu menu = new Menu();
+    protected ArrayList<Ennemy> nbEnnemy = new ArrayList<Ennemy>();
+
+    public Ennemy ennemis (int number, ArrayList<Ennemy> liste) {
+        return liste.get(number);
+    }
+
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
         System.out.println("vous êtes dans la caverne,\n " +
                 "vous voyez un long couloir sombre " +
@@ -62,7 +68,7 @@ public class EnterCavern {
                 try {
                     plateaux.get(position);//ici on décrit la pièce
                     System.out.println(plateaux.get(position));
-                } catch (IndexOutOfBoundsException e) {
+                } catch (IndexOutOfBoundsException e) {//exception de sortie du jeu
                     System.out.println("tu trouves le sceptre de Feu");
                 }
                 System.out.println("avance avec entrée ou fouille la salle");
@@ -72,8 +78,7 @@ public class EnterCavern {
                 System.out.println("En fouillant tu découvres" +
                         plateaux.get(position).getReward().getName() +
                  "\n veux-tu t'en équiper ? oui/non");
-                Choice booleen = new Choice();
-                if (booleen.choice(aventurier, keyboard)) {
+                if (menu.choice(aventurier, keyboard)) {
                     if (plateaux.get(position).getReward().getPour().equals(aventurier.getType())) {
                         /*le if vérifie si l'arme est bien pour cet aventurier*/
                         aventurier.setAttack(plateaux.get(position).getReward());
