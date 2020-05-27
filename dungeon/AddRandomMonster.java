@@ -1,12 +1,8 @@
 package com.heroquest.dungeon;
 
 import com.heroquest.pj.CommunPeople;
-import com.heroquest.pnj.NoOne;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Random;
 
 public class AddRandomMonster {
     public void addRandomMonster(int nbMonstres, DescriptionSalle texte,
@@ -24,14 +20,3 @@ public class AddRandomMonster {
         }
     }
 }
-/*
-    TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-* if (plateaux.contains(salle.ennemis.getType().equals(ennemy.getType()))) {
-                plateaux.set(randomIndexPlateau, salle);
-            }else {
-                i --;
-            }
-*
-    Collections.shuffle(plateaux, new Random(randomIndexPlateau));
-            plateaux.set(randomIndexPlateau, salle);
-*/

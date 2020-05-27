@@ -48,46 +48,13 @@ public class EnterCavern {
                 AddRandomMonster random = new AddRandomMonster();
                 random.addRandomMonster(nbDragon, texte, dragon, randomIndexPlateau,
                         randomNumber, plateaux, taillePlateau, fqDragon);
-                random.addRandomMonster(nbSorcerer, texte, sorcerer, randomIndexPlateau, randomNumber, plateaux, taillePlateau, fqSorcerer);
-                random.addRandomMonster(nbGobelin, texte, goblins, randomIndexPlateau, randomNumber, plateaux, taillePlateau, fqGobelin);
+                random.addRandomMonster(nbSorcerer, texte, sorcerer, randomIndexPlateau,
+                        randomNumber, plateaux, taillePlateau, fqSorcerer);
+                random.addRandomMonster(nbGobelin, texte, goblins, randomIndexPlateau,
+                        randomNumber, plateaux, taillePlateau, fqGobelin);
             }
          }
-        System.out.println(plateaux);
         int position = 0;
-        /*
-        ----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----CE QUE JE VEUX FAIRE-----
-        j'arrive maintenant à mettre description et monstres sur les cases.
-        L'idée est que la création de tels monstres dépend de la position dans le
-        ArrayList, par exemple les gobelins et noOne peuvent être partout, les sorciers sur la moitié
-        du plateau, les dragons sur le quart restant
-        qqch comme for (int i = 0; i<nombre possible de monstres; i++) {
-            plateaux.set(random taillePlateau, new Gobelins)
-            }
-            bon pour un gobelins c'est simple ils sont "partout"
-            mais pour les sorciers qui ne peuvent apparaitre QUE à partir de Salle (taillePlateaux * 0,75)
-            comment faire ? car du coup le résultat est inversé (de 1 à 48 ou
-            ALORS : Salle (taillePlateau - taillePlateau * 0,75) soit 64 - 48 = 16
-            OU ALORS if (random taille Plateau < taillePlateau *0,75){
-             random taille Plateau + taillePlateau*0,75
-             }else {fais ta vie}
-
-             il faut aussi vérifier que le ArrayList est vide :
-            while (plateaux valeur ennemy == noOne) { create a new ennemy}
-
-
-              L'idée est de pouvoir tester s'il y a un ennemi
-             dans cette salle. Si ennemi => on va plus loin. Si noOne => nouvel ennemi.
-             Mais comme dit hier avec Flo cela pourrait être sans fin par moment,
-             du coup associé la méthode shuffle() à
-            cette solution afin que la part  CPU ne soit pas trop importante.
-
-            noOne = taille plateau(nb gobelins + nb sorciers + nb dragons)
-            Sinon il n'y a QUE des noOne et après on en met pardessus, oui
-            c'est plus simple et logique. donc dans Salle.java, ennemy = new noOne
-
-            TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
-
-        */
         do {
             String input = keyboard.nextLine();
             if (input.equals("")) {
