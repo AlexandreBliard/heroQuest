@@ -3,7 +3,6 @@ package com.heroquest.dungeon;
 import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pnj.Dragon;
-import com.heroquest.pnj.Ennemy;
 import com.heroquest.pnj.Goblins;
 import com.heroquest.pnj.Sorcerer;
 
@@ -14,14 +13,9 @@ public class EnterCavern {
 
     public EnterCavern() {
     }
-    Menu menu = new Menu();
-    protected ArrayList<Ennemy> nbEnnemy = new ArrayList<Ennemy>();
-
-    public Ennemy ennemis (int number, ArrayList<Ennemy> liste) {
-        return liste.get(number);
-    }
 
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+        Menu menu = new Menu();
         System.out.println("vous êtes dans la caverne,\n " +
                 "vous voyez un long couloir sombre " +
                 "que la clarté de l'extérieur " +
