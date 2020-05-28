@@ -1,10 +1,8 @@
 package com.heroquest.stuff;
 
-public class Claws extends Weapons {
-    public Claws(String Cpour, int Cdamage, String Cname) {
-        super(Cpour, Cdamage, Cname);
-    }
+public class Claws extends Loot {
     public Claws() {
-        this("ennemy",8, " qui est armé d'une patte pourvu de griffes");
+        super("ennemy", "weapon",8, " qui est armé d'une patte pourvu de griffes", 0, 0);
     }
+
 }

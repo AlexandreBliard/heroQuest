@@ -1,7 +1,7 @@
 package com.heroquest.stuff;
 
-public class LongSword extends Weapons{
+public class LongSword extends Loot {
     public LongSword() {
-        super ("guerrier", 7, "une épée longue");
+        super ("guerrier", "weapon",7, "une épée longue", 15, 0);
     }
 }

@@ -7,7 +7,7 @@ import com.heroquest.stuff.*;
 public class Salle {
     protected String description;
     protected CommunPeople ennemis;
-    protected Weapons reward;
+    protected Loot reward;
 
 
 /*SETTER------SETTER------SETTER------SETTER------*/
@@ -21,7 +21,7 @@ public class Salle {
         return ennemis;
     }
 
-    public void setReward(Weapons reward) {
+    public void setReward(Loot reward) {
         this.reward = reward;
     }
     /*GETTER-------GETTER-------GETTER-------GETTER-------*/
@@ -34,12 +34,12 @@ public class Salle {
         return ennemis;
     }
 
-    public Weapons getReward() {
+    public Loot getReward() {
         return reward;
     }
     /*CONSTRUCTEUR------CONSTRUCTEUR------CONSTRUCTEUR------*/
 
-    public Salle(String description, CommunPeople ennemis, Weapons reward) {
+    public Salle(String description, CommunPeople ennemis, Loot reward) {
         this.description = description;
         this.ennemis = ennemis;
         this.reward = reward;
@@ -49,7 +49,7 @@ public class Salle {
     public Salle(String description) {
         this.description = description;
         this.ennemis = new NoOne();
-        this.reward = new LongSword();
+        this.reward = new PotionLow();
     }
 
 

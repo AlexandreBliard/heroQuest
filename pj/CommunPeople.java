@@ -1,7 +1,6 @@
 package com.heroquest.pj;
 
-import com.heroquest.dungeon.Salle;
-import com.heroquest.stuff.Weapons;
+import com.heroquest.stuff.Loot;
 
 public abstract class CommunPeople{
 
@@ -10,15 +9,15 @@ public abstract class CommunPeople{
     protected String type;
     protected String name;
     protected int life;
-    protected Weapons attack;
+    protected Loot attack;
 
 /*--------- CONSTRUCTEURS  CONSTRUCTEURS   CONSTRUCTEURS ------------*/
 
-    public CommunPeople(String type, String name, int life, Weapons weapons) {
+    public CommunPeople(String type, String name, int life, Loot loot) {
         this.type = type;
         this.name = name;
         this.life = life;
-        this.attack = weapons;
+        this.attack = loot;
     }
 
     /*---------les SETTERS sont ici ------------*/
@@ -26,13 +25,13 @@ public abstract class CommunPeople{
     public void setType(String type) { this.type = type; }
     public void setName(String name) { this.name = name; }
     public void setLife(int life) {this.life = life;}
-    public void setAttack(Weapons attack) {this.attack = attack;}
+    public void setAttack(Loot attack) {this.attack = attack;}
 
  /*--------les GETTERS sont ici------------*/
     public String getType() {return type;}
     public String getName() {return name;}
     public int getLife() {return life;}
-    public Weapons getAttack() {return attack;}
+    public Loot getAttack() {return attack;}
 
 /*---------redéfinitions de toSTRING ici---------*/
     public String toString() {

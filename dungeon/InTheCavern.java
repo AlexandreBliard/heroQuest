@@ -32,7 +32,7 @@ public class InTheCavern {
                 case "fouille":
                     System.out.println("En fouillant tu découvres" +
                             plateaux.get(position).getReward().getName() +
-                            "\n veux-tu t'en équiper ? oui/non");
+                            "\n veux-tu l'utiliser ? oui/non");
                     if (menu.choice(aventurier, keyboard)) {
                         if (plateaux.get(position).getReward().getPour().equals(aventurier.getType())) {
                             /*le if vérifie si l'arme est bien pour cet aventurier*/
@@ -42,7 +42,10 @@ public class InTheCavern {
                                     " tu fais maintenant " +
                                     aventurier.getAttack().getDamage() +
                                     " points de dégâts");
-                        } else {
+                        } /* else if (plateaux.get(position).getReward().get) {
+WORK IN PROGRESS------------WORK IN PROGRESS------------WORK IN PROGRESS------------WORK IN PROGRESS------------
+                        } */
+                        else {
                             System.out.println("désolé " + aventurier.getName() +
                                     " mais cette " + plateaux.get(position).getReward().getName() +
                                     " n'est pas faite pour les " + aventurier.getType() +
@@ -57,6 +60,7 @@ public class InTheCavern {
                 default:
                     System.out.println("petite faute de frappe non ?");
                     break;
+                case "boire potion":
             }
         }while (position < plateaux.size());
         System.out.println("Sceptre de Feu acquis");

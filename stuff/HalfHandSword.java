@@ -1,7 +1,7 @@
 package com.heroquest.stuff;
 
-public class HalfHandSword extends Weapons{
+public class HalfHandSword extends Loot {
     public HalfHandSword() {
-        super ("guerrier", 10, "une épée batârde");
+        super ("guerrier", "weapon",10, "une épée batârde", 45, 0);
     }
 }

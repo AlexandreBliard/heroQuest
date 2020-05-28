@@ -1,10 +1,7 @@
 package com.heroquest.stuff;
 
-public class NoWeapons extends Weapons {
-    public NoWeapons(String Cpour, int Cdamage, String Cname) {
-        super(Cpour, Cdamage, Cname);
-    }
+public class NoWeapons extends Loot {
     public NoWeapons() {
-        this ("", 0, "");
+        super("", "weapon",0, "", 0, 0);
     }
 }

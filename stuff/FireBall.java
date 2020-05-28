@@ -1,8 +1,8 @@
 package com.heroquest.stuff;
 
-public class FireBall extends Weapons {
+public class FireBall extends Loot {
     public FireBall() {
-        super("magicien", 14, "le bâton de boule de feu");
+        super("magicien", "weapon",14, "le bâton de boule de feu", 40, 0);
     }
 
 }
