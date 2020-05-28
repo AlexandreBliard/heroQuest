@@ -2,12 +2,14 @@ package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
+import com.heroquest.pj.ValeurExceptions;
+import com.heroquest.pj.MaxLife;
 import com.heroquest.stuff.DrinkPotion;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class InTheCavern {
+public class InTheCavern{
 
     private int position = 0;
 
@@ -31,7 +33,7 @@ public class InTheCavern {
                     menu.options(aventurier, keyboard);
                     break;
                 case "fouille":
-                    System.out.println("En fouillant tu découvres" +
+                    System.out.println("En fouillant tu découvres " +
                             plateaux.get(position).getReward().getName() +
                             "\n veux-tu l'utiliser ? oui/non");
                     if (menu.choice(aventurier, keyboard)) {
@@ -55,7 +57,11 @@ public class InTheCavern {
                                 break;
                             case "potion":
                                 DrinkPotion drink = new DrinkPotion();
-                                drink.drinkPotion(aventurier, plateaux.get(position).getReward());
+                                    try {
+                                        drink.drinkPotion(aventurier, plateaux.get(position).getReward());
+                                    } catch (ValeurExceptions e) {
+                                        aventurier.setLife(MaxLife.maxLife(aventurier.getLevel(), aventurier.getLifeByLevel()));
+                                    }
                                 System.out.println("Tu as bu " +
                                         plateaux.get(position).getReward().getName() +
                                         "\nTu as maintenant " +

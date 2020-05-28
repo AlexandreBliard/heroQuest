@@ -9,12 +9,12 @@ public abstract class Ennemy extends CommunPeople {
     int xp;//xp gagnés quand on a vaincu l'ennemi
     int gold;// gold gagné quand on a vaincu l'ennemi
 
-    public Ennemy(String type, String name, int life, Loot loot) {
-        super(type, name, life, loot);
+    public Ennemy(String type, String name, int life, int lifeByLevel, int level, Loot loot) {
+        super(type, name, life, lifeByLevel, level,loot);
     }
 
     public Ennemy(String type, String name, int life, Loot loot, int xp, int gold) {
-        super(type, name, life, loot);
+        super(type, name, life,15, 1,loot);
         this.xp = xp;
         this.gold = gold;
     }

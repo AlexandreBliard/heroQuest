@@ -9,14 +9,18 @@ public abstract class CommunPeople{
     protected String type;
     protected String name;
     protected int life;
+    protected int lifeByLevel;
+    protected int level;
     protected Loot attack;
 
 /*--------- CONSTRUCTEURS  CONSTRUCTEURS   CONSTRUCTEURS ------------*/
 
-    public CommunPeople(String type, String name, int life, Loot loot) {
+    public CommunPeople(String type, String name, int life, int lifeByLevel, int level, Loot loot) {
         this.type = type;
         this.name = name;
         this.life = life;
+        this.lifeByLevel = lifeByLevel;
+        this.level = level;
         this.attack = loot;
     }
 
@@ -31,6 +35,10 @@ public abstract class CommunPeople{
     public String getType() {return type;}
     public String getName() {return name;}
     public int getLife() {return life;}
+    public int getLifeByLevel() {
+        return lifeByLevel;
+    }
+    public int getLevel() {return level;}
     public Loot getAttack() {return attack;}
 
 /*---------redéfinitions de toSTRING ici---------*/

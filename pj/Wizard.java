@@ -7,7 +7,7 @@ import com.heroquest.stuff.Loot;
 public class Wizard extends CommunPeople {
 
     public Wizard(String name, Loot loot) {
-        super ("magicien", name, 3, loot);
+        super ("magicien", name, 3,3,1, loot);
     }
     public Wizard(String name) {
         this(name, new MagicProjectile());
