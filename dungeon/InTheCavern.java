@@ -2,6 +2,7 @@ package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
+import com.heroquest.stuff.DrinkPotion;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -34,27 +35,42 @@ public class InTheCavern {
                             plateaux.get(position).getReward().getName() +
                             "\n veux-tu l'utiliser ? oui/non");
                     if (menu.choice(aventurier, keyboard)) {
-                        if (plateaux.get(position).getReward().getPour().equals(aventurier.getType())) {
-                            /*le if vérifie si l'arme est bien pour cet aventurier*/
-                            aventurier.setAttack(plateaux.get(position).getReward());
-                            System.out.println("tu as équipé " +
-                                    aventurier.getAttack().getName() +
-                                    " tu fais maintenant " +
-                                    aventurier.getAttack().getDamage() +
-                                    " points de dégâts");
-                        } /* else if (plateaux.get(position).getReward().get) {
-WORK IN PROGRESS------------WORK IN PROGRESS------------WORK IN PROGRESS------------WORK IN PROGRESS------------
-                        } */
-                        else {
-                            System.out.println("désolé " + aventurier.getName() +
-                                    " mais cette " + plateaux.get(position).getReward().getName() +
-                                    " n'est pas faite pour les " + aventurier.getType() +
-                                    "\n tape entrée pour continuer");
+                        switch (plateaux.get(position).getReward().getType()) {
+                            case "weapon":
+                                if (plateaux.get(position).getReward().getPour().equals(aventurier.getType())) {
+                                    /*le if vérifie si l'arme est bien pour cet aventurier*/
+                                    aventurier.setAttack(plateaux.get(position).getReward());
+                                    System.out.println("tu as équipé " +
+                                            aventurier.getAttack().getName() +
+                                            " tu fais maintenant " +
+                                            aventurier.getAttack().getDamage() +
+                                            " points de dégâts");
+                                }
+                                else {
+                                    System.out.println("désolé " + aventurier.getName() +
+                                            " mais " + plateaux.get(position).getReward().getName() +
+                                            " n'est pas faite pour un " + aventurier.getType() +
+                                            "\n tape entrée pour continuer");
+                                }
+                                break;
+                            case "potion":
+                                DrinkPotion drink = new DrinkPotion();
+                                drink.drinkPotion(aventurier, plateaux.get(position).getReward());
+                                System.out.println("Tu as bu " +
+                                        plateaux.get(position).getReward().getName() +
+                                        "\nTu as maintenant " +
+                                        aventurier.getLife() +
+                                        " points de vie");
+                                break;
+                            default:
+                                System.out.println("une erreur c'est glissé dans le programme");
                         }
-                    } else {
+                    }else {
                         System.out.println("c'est ton choix \n " +
                                 "tape entrée pour continuer");
                     }
+
+
                     ;
                     break;
                 default:

@@ -1,6 +1,5 @@
 package com.heroquest.dungeon;
 
-import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pnj.Dragon;
 import com.heroquest.pnj.Goblins;

@@ -4,9 +4,9 @@ import com.heroquest.pj.CommunPeople;
 
 public class DrinkPotion {
 
-    public int drinkPotion(CommunPeople aventurier,
+    public void drinkPotion(CommunPeople aventurier,
                             Loot potion) {
-        return aventurier.getLife() +
-                potion.getRestore();
+        aventurier.setLife(aventurier.getLife() +
+                potion.getRestore());
     }
 }
