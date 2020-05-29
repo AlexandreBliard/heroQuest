@@ -5,6 +5,15 @@ import com.heroquest.pj.CommunPeople;
 
 import java.util.Scanner;
 
+/**
+ * ici c'est le premier choix du joueur, il peut refuser
+ * de rentrer dans la caverne
+ * on instancie Menu à partir de maintenant car toutes les
+ * méthodes majeur sont gérés par cette classe, c'est cette
+ * méthode qui permet d'appeler les règles spéciales par la suite
+ * à chaque question booléenne on appelle
+ * une méthode qui s'occupe de régler ce problème.
+ */
 public class AtTheEntry {
 
     Menu menu = new Menu();

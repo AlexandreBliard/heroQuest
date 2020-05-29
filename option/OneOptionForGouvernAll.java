@@ -1,12 +1,13 @@
 package com.heroquest.option;
 
+import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
 
 import java.util.Scanner;
 
 public class OneOptionForGouvernAll {
-    public void chooseSpecialRules(CommunPeople aventurier, Scanner keyboard) {
-        LeaveCavern leave = new LeaveCavern();
+    Menu menu = new Menu();
+    public void chooseSpecialRules(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
         ChangeName name = new ChangeName();
         System.out.println("tu invoques les " +
                 "arcanes sacrés. Si tu veux " +
@@ -17,6 +18,8 @@ public class OneOptionForGouvernAll {
                 "tape partir");
         System.out.println("si tu veux changer " +
                 "ton nom tape nom");
+        System.out.println("si tu veux recommencer " +
+                "tape respawn");
         System.out.println("si tu veux continuer " +
                 "ton aventure tape continuer");
         boolean choix = false;
@@ -25,12 +28,13 @@ public class OneOptionForGouvernAll {
             if (inputChooseSPR.equals("moi")) {
                 System.out.println(aventurier);
             } else if (inputChooseSPR.equals("partir")) {
-                leave.leaveCavern(aventurier, keyboard);
+                menu.leaveCavern(aventurier, keyboard);
             } else if (inputChooseSPR.equals("nom")) {
                 name.changeName(aventurier, keyboard);
             } else if (inputChooseSPR.equals("continuer")) {
-                /*mettre ici un code qui retourne à la partie*/
                 choix = true;
+            }else if (inputChooseSPR.equals("respawn")) {
+                menu.startGame(keyboard);
             }
         } while (!choix);
     }

@@ -6,6 +6,13 @@ import com.heroquest.pj.CommunPeople;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * on explique comment faire apparaitre les options du jeu
+ * au joueur
+ * on génère également la caverne à ce moment là. Elle est
+ * ensuite envoyé en paramètre dans les méthodes suivantes
+ * il y a toujours une échappatoire de texte s'il y a une faute de frappe
+ */
 public class EnterCavern {
 
     public EnterCavern() {

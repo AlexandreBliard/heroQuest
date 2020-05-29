@@ -9,6 +9,13 @@ import com.heroquest.stuff.DrinkPotion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Cette méthode est très longue et va faire l'objet d'un réfactor dans
+ * pas longtemps : elle gère le lancer de dés, la position du joueur
+ * dans la caverne, ce qu'il y a dans la Salle, l'interaction avec
+ * celle-ci et bientôt les combats
+ * elle est également en lien avec les règles spéciales
+ */
 public class InTheCavern{
 
     private int position = 0;

@@ -3,9 +3,23 @@ package com.heroquest;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pj.Warrior;
 import com.heroquest.pj.Wizard;
+import com.heroquest.pnj.NoOne;
 
 import java.util.Scanner;
 
+/**
+ * par un dialogue avec un sage nous choisissons
+ * notre nom ainsi que notre avatar.
+ * Il y a une petite énigme ici, le sage étant un peu sourd il
+ * faut crier sa classe de personnage.
+ * Pour aiguiller l'utilisateur le sage dit qu'il l'entend mal
+ *
+ * Nous avons ici un constructeur qui crée le personnage suivant
+ * le choix du joueur et prend en paramètre la classe (classePJ)
+ * et le nom (namePJ)
+ *
+ * cette méthode est à la fin de cette classe.
+ */
 public class ChooseYourCharacter {
     public CommunPeople chooseYourCharacter(Scanner keyboard) {
         System.out.println("bonjour à toi " +
@@ -38,11 +52,19 @@ public class ChooseYourCharacter {
         return aventurier;
     }
 
+    /**
+     * on se laisse ici une possibilité de retourner de nouvelles
+     * futur classes de PJ
+     * @param nomDeClasse
+     * @param namePJ
+     * @return
+     */
     public CommunPeople createAventurer(String nomDeClasse, String namePJ) {
-        if (nomDeClasse.equals("GUERRIER")) {
-            return new Warrior(namePJ);
-        }else {
-            return new Wizard(namePJ);
+        switch (nomDeClasse) {
+            case "MAGICIEN":
+                return new Wizard(namePJ);
+            default:
+                return new Warrior(namePJ);
         }
     }
 }
