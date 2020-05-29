@@ -16,6 +16,7 @@ public abstract class Loot {
     }
     public int getDamage() {return damage;}
     public String getName() {return name;}
+    public int getPrice() {return price;}
     public int getRestore() {
         return restore;
     }

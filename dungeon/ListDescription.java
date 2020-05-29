@@ -2,7 +2,7 @@ package com.heroquest.dungeon;
 
 import java.util.*;
 
-public enum Description {
+public enum ListDescription {
     SALLE,
     COULOIR,
     GDSALLE,
@@ -13,13 +13,13 @@ public enum Description {
     OUBLIETTE,
     PIEGE;
 
-    private static final List<Description> VALUES =
+    private static final List<ListDescription> VALUES =
             Collections.unmodifiableList
                     (Arrays.asList(values()));
     private static final int SIZE = VALUES.size();
     private static final Random RANDOM = new Random();
 
-    public static Description randomDescription() {
+    public static ListDescription randomDescription() {
         return VALUES.get(RANDOM.nextInt(SIZE));
     }
 }

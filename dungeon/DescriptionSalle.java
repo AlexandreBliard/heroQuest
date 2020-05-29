@@ -3,7 +3,7 @@ package com.heroquest.dungeon;
 public class DescriptionSalle{
 
     public String description() {
-        Description description = Description.randomDescription();
+        ListDescription description = ListDescription.randomDescription();
         switch (description) {
             case SALLE:
                 return "dans une pièce vétuste dépouillé " +

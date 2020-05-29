@@ -19,22 +19,23 @@ public class Cavern {
         int nbSorcerer = taillePlateau / 8;
         int nbDragon = taillePlateau / 16;
         DescriptionSalle texte = new DescriptionSalle();
+        RandomReward loot = new RandomReward();
         CommunPeople goblins = new Goblins();
         CommunPeople sorcerer = new Sorcerer();
         CommunPeople dragon = new Dragon();
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<=taillePlateau; i++) {//boucle créations du plateaux
-            Salle salle = new Salle(texte.description());//salle avec description aléatoire et sans ennemi
+            Salle salle = new Salle(texte.description(), loot.reward());//salle avec description & loot aléatoire et sans ennemi
             plateaux.add(salle);
             if (i == taillePlateau) {
                 int randomIndexPlateau = 0;
                 RandomNumber randomNumber = new RandomNumber();
                 AddRandomMonster random = new AddRandomMonster();
-                random.addRandomMonster(nbDragon, texte, dragon, randomIndexPlateau,
+                random.addRandomMonster(nbDragon, texte, loot, dragon, randomIndexPlateau,
                         randomNumber, plateaux, taillePlateau, fqDragon);
-                random.addRandomMonster(nbSorcerer, texte, sorcerer, randomIndexPlateau,
+                random.addRandomMonster(nbSorcerer, texte, loot, sorcerer, randomIndexPlateau,
                         randomNumber, plateaux, taillePlateau, fqSorcerer);
-                random.addRandomMonster(nbGobelin, texte, goblins, randomIndexPlateau,
+                random.addRandomMonster(nbGobelin, texte, loot, goblins, randomIndexPlateau,
                         randomNumber, plateaux, taillePlateau, fqGobelin);
             }
         }

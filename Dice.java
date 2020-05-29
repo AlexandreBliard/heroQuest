@@ -1,7 +1,7 @@
 package com.heroquest;
 
 public class Dice {
-    public int deuxDsix () {
+    public static int deuxDsix () {
         int d1 = (int) (Math.random()*5 + 1);
         int d2 = (int) (Math.random()*5 + 1);
         return d1 + d2;

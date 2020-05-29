@@ -68,6 +68,18 @@ public class InTheCavern{
                                         aventurier.getLife() +
                                         " points de vie");
                                 break;
+                            case "gold":
+                                System.out.println("tu trouves " + plateaux.get(position).getReward().getPrice() +
+                                        " pièces d'or");
+                                break;
+                            case "dust":
+                            case "trash":
+                                System.out.println(" tu trouves " + plateaux.get(position).getReward().getName());
+                                break;
+                            case "noting":
+                                System.out.println(plateaux.get(position).getReward().getName() + " " +
+                                        aventurier.getName() + " Snow") ;
+                                break;
                             default:
                                 System.out.println("une erreur c'est glissé dans le programme");
                         }

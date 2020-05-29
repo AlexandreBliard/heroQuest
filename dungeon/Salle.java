@@ -39,26 +39,22 @@ public class Salle {
     }
     /*CONSTRUCTEUR------CONSTRUCTEUR------CONSTRUCTEUR------*/
 
+    /*constructeur utilisé dans le AddRandomMonstre*/
     public Salle(String description, CommunPeople ennemis, Loot reward) {
         this.description = description;
         this.ennemis = ennemis;
         this.reward = reward;
     }
-/*constructeur pour la création des cases avec descriptions
+/*constructeur pour la création des cases avec descriptions et récompenses
 * et sans monstres*/
-    public Salle(String description) {
+    public Salle(String description, Loot reward) {
         this.description = description;
         this.ennemis = new NoOne();
-        this.reward = new PotionLow();
+        this.reward = reward;
     }
 
 
-    /*constructeur temporaire tant que reward non paramétré*/
-    public Salle(String description, CommunPeople ennemis) {
-        this.description = description;
-        this.ennemis = ennemis;
-        this.reward = new HalfHandSword();
-    }
+
 
     /*toSTRING ------toSTRING ------toSTRING ------*/
     @Override
