@@ -8,7 +8,17 @@ import com.heroquest.pnj.Sorcerer;
 import java.util.ArrayList;
 
 public class Cavern {
-
+    /**
+     * génération de la caverne, utilisera le constructeur
+     * de Salle pour générer salle par salle la taille de
+     * la caverne définit suivant la variable taillePlateau
+     * qui ensuite générera le nombre de monstres et qui ensuite
+     * effectuera la répartition dans les Salles sachant
+     * que les dernières auront les ennemis les plus puissants
+     * et qu'une méthode vérifie la présence d'un ennemi.
+     * @return
+     * @throws NoSuchFieldException
+     */
     public ArrayList<Salle> Cavern() throws NoSuchFieldException {
 
         int taillePlateau = 63;

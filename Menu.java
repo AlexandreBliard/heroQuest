@@ -9,18 +9,16 @@ import com.heroquest.pj.CommunPeople;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * * Carrefour des déplacements c'est ici où toutes les méthodes majeurs
+ *      * sont gérés et cela permet que depuis n'importe où on puisse
+ *      * se rendre n'importe où également.
+ *      * Cette règle est surtout utilisé pour les règles spéciales
+ *      * (options) qui peut être demandé à n'importe quel moment dans
+ *      * la caverne.
+ */
 public class Menu {
-    /**
-     * Carrefour des déplacements c'est ici où toutes les méthodes majeurs
-     * sont gérés et cela permet que depuis n'importe où on puisse
-     * se rendre n'importe où également.
-     * Cette règle est surtout utilisé pour les règles spéciales
-     * (options) qui peut être demandé à n'importe quel moment dans
-     * la caverne.
-     */
-    public Menu() {
 
-    }
 
     /**
      * commande pour choisir le personnage

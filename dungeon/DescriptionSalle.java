@@ -14,9 +14,9 @@ public class DescriptionSalle{
 
             case GDSALLE:
                 return "dans une grande salle avec " +
-                        "une table dressé. La nourriture " +
+                        "une table dressée. La nourriture " +
                         "n'est pas comestible pour un humain " +
-                        " sauf si tu es cannibale.";
+                        "sauf si tu es cannibale.";
 
             case VESTIBULE:
                 return "dans une petite pièce exigu.";
@@ -31,7 +31,7 @@ public class DescriptionSalle{
                 return "dans une pièce à l'incroyable " +
                         "puanteur. Tu entends les mouches " +
                         "voler autour d'amas de viandes " +
-                        "défraichis qui pendant " +
+                        "défraichies pendant " +
                         "à des crochets.";
 
             case PRISON:

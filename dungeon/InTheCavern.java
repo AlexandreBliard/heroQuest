@@ -101,7 +101,6 @@ public class InTheCavern{
                 default:
                     System.out.println("petite faute de frappe non ?");
                     break;
-                case "boire potion":
             }
         }while (position < plateaux.size());
         System.out.println("Sceptre de Feu acquis");

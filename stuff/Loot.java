@@ -11,9 +11,7 @@ public abstract class Loot {
 
 /*-------- GETTERS  GETTERS  GETTERS  GETTERS------------*/
     public String getPour() {return pour;}
-    public String getType() {
-        return type;
-    }
+    public String getType() {return type;}
     public int getDamage() {return damage;}
     public String getName() {return name;}
     public int getPrice() {return price;}
