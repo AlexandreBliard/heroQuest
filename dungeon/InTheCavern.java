@@ -104,6 +104,10 @@ public class InTheCavern{
 
                     ;
                     break;
+                case "sac" :
+                    Request inTheBag = new Request();
+                    inTheBag.takeBackPack(keyboard);
+                    break;
                 default:
                     System.out.println("petite faute de frappe non ?");
                     break;

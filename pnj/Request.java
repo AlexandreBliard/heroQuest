@@ -5,12 +5,14 @@ import com.heroquest.pj.CommunPeople;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * classe permettant la requête SQL
  * avec la DB
  */
 public class Request {
+
     public void addBackPack(ArrayList<Salle> plateaux, int position) {
         String name = plateaux.get(position).getReward().getName();
         System.out.println(name);
@@ -26,7 +28,25 @@ public class Request {
         }
     }
 
-    public void takeBackPack() {
+    public void takeBackPack(Scanner keyboard) {
+        System.out.println("tu as ceci dans ton sac");
+        String request = "SELECT name FROM inventory";
+        try {
+            ResultSet results = DriverManager.getConnection(
+                    "jdbc:mariadb://localhost:3306/backPack", "root", "")
+                    .createStatement().executeQuery(request);
+            ResultSetMetaData rsmd = results.getMetaData();
+            while(results.next()){
+                for (int i = 1 ; i <= rsmd.getColumnCount(); i++) {
+                    System.out.println(results.getObject(i).toString());
+                }
+            }
+
+
+        }catch (SQLException throwables) {
+            System.out.println("erreur de recherche");
+            throwables.printStackTrace();
+        }
 
     }
 }
