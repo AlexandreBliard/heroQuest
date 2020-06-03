@@ -4,8 +4,12 @@ import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pj.ValeurExceptions;
 import com.heroquest.pj.MaxLife;
+import com.heroquest.pnj.Connect;
+import com.heroquest.pnj.Request;
 import com.heroquest.stuff.DrinkPotion;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -91,8 +95,10 @@ public class InTheCavern{
                                 System.out.println("une erreur c'est glissé dans le programme");
                         }
                     }else {
-                        System.out.println("c'est ton choix \n " +
+                        System.out.println("on le met quand même dans le sac \n " +
                                 "tape entrée pour continuer");
+                        Request inTheBag = new Request();
+                        inTheBag.addBackPack(plateaux, position);
                     }
 
 

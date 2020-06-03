@@ -2,6 +2,8 @@ package com.heroquest.pnj;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  * classe permettant la connexion avec
@@ -9,7 +11,7 @@ import java.sql.DriverManager;
  */
 public class Connect {
 
-    public void connect() {
+    public Statement connect() {
         try {
             Class.forName("org.mariadb.jdbc.Driver");
             System.out.println("Driver O.K.");
@@ -19,13 +21,17 @@ public class Connect {
             String passwd = "";
 
             Connection conn = DriverManager.getConnection(url, user, passwd);
-
+            Statement state = conn.createStatement();
+            ResultSet result = state.executeQuery("");
             System.out.println("Connexion effective !");
+
         } catch (Exception e) {
             System.out.println("erreur connexion DB");
             e.printStackTrace();
         }
+        return null;
     }
+
 
     /*
     * réflexion sur l'accès à DB
