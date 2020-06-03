@@ -98,7 +98,7 @@ public class InTheCavern{
                         System.out.println("on le met quand même dans le sac \n " +
                                 "tape entrée pour continuer");
                         Request inTheBag = new Request();
-                        inTheBag.addBackPack(plateaux, position);
+                        inTheBag.addBackPack( plateaux, position);
                     }
 
 
@@ -106,7 +106,7 @@ public class InTheCavern{
                     break;
                 case "sac" :
                     Request inTheBag = new Request();
-                    inTheBag.takeBackPack(keyboard);
+                    inTheBag.takeBackPack(aventurier, keyboard);
                     break;
                 default:
                     System.out.println("petite faute de frappe non ?");
