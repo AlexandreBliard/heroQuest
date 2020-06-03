@@ -41,6 +41,20 @@ public class Request {
                     System.out.println(results.getObject(i).toString());
                 }
             }
+            results.close();
+            System.out.println("que veux-tu prendre ?");
+            String input = keyboard.nextLine();
+            ResultSet compare = DriverManager.getConnection(
+                    "jdbc:mariadb://localhost:3306/backPack", "root", "")
+                    .createStatement().executeQuery("SELECT name FROM inventory " +
+                            "WHERE name = '" +input+ "'");
+            System.out.println("compare passé");
+            if (compare.next()) {
+                System.out.println("tu l'équipes");
+            }else{
+                System.out.println("tu ne l'as pas en stock");
+            }
+
 
 
         }catch (SQLException throwables) {
