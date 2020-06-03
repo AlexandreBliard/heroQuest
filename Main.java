@@ -1,5 +1,9 @@
 package com.heroquest;
 
+import com.heroquest.pnj.Connect;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.Scanner;
 
 /**

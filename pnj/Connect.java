@@ -1,6 +1,31 @@
 package com.heroquest.pnj;
 
-public class DB {
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+/**
+ * classe permettant la connexion avec
+ * la DB backPack
+ */
+public class Connect {
+
+    public void connect() {
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+            System.out.println("Driver O.K.");
+
+            String url = "jdbc:mariadb://localhost:3306/backPack";
+            String user = "root";
+            String passwd = "";
+
+            Connection conn = DriverManager.getConnection(url, user, passwd);
+
+            System.out.println("Connexion effective !");
+        } catch (Exception e) {
+            System.out.println("erreur connexion DB");
+            e.printStackTrace();
+        }
+    }
 
     /*
     * réflexion sur l'accès à DB
@@ -31,5 +56,13 @@ public class DB {
 *               break;
 *           }
     *   }
+    * =======CE_QUI_EST_ATTENDU=========CE_QUI_EST_ATTENDU=========CE_QUI_EST_ATTENDU=========
+    * récupéer des élméents, en récupérer, les mettre à jour, les effacer
+    * Select Count permet de faire une vérification du nb d'objet, on peut
+    * récupérer par la suite un seul objet en s'intéressant à son ID, le nom et l'ID
+    * sont renvoyés vers le programme et on delete via l'ID, ainsi un seul sera supprimé
+    * et non tous les objets du même nom.
     * */
+
+
 }
