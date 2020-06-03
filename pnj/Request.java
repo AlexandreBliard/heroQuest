@@ -71,6 +71,10 @@ public class Request {
 
                     case "potion de soins légers":
                         DrinkPotion DP = new DrinkPotion();
+                        ResultSet erase = DriverManager.getConnection(
+                                "jdbc:mariadb://localhost:3306/backPack", "root", "")
+                                .createStatement().executeQuery("DELETE FROM inventory " +
+                                        "WHERE name = '" +input+ "'");
                         try {
                             DP.drinkPotion(aventurier, new PotionLow());
                         } catch (ValeurExceptions valeurExceptions) {
@@ -79,14 +83,14 @@ public class Request {
                         break;
 
                     case "'You find nothing Jhon Snow'":
-                        System.out.println("mais qu'est-ce que tu veux foutre avec ça ?");
+                        System.out.println("c'était juste pour le ;-)");
                         break;
 
-                    case " juste de la poussière." :
+                    case "juste de la poussière" :
                         System.out.println("pas assez pour lui piquer les yeux");
                         break;
 
-                    case  "juste des ordures " :
+                    case  "juste des ordures" :
                         System.out.println("on pourrait croire à des boucles d'oreille");
                         break;
 

@@ -3,6 +3,9 @@ package com.heroquest.option;
 import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
 
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class LeaveCavern{
@@ -20,6 +23,13 @@ public class LeaveCavern{
         Menu menu = new Menu();
 
         if (menu.choice(aventurier, keyboard)) {
+            try {
+                ResultSet eraseAll = DriverManager.getConnection(
+                        "jdbc:mariadb://localhost:3306/backPack", "root", "")
+                        .createStatement().executeQuery("DELETE FROM inventory ");
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
             System.out.println("j'espère te revoir");
             System.exit(0);
         }else {
