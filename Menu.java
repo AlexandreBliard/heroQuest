@@ -107,9 +107,10 @@ public class Menu {
      * @param aventurier
      * @param keyboard
      */
-    public void takeBackPack(CommunPeople aventurier, Scanner keyboard) {
+    public void takeBackPack(CommunPeople aventurier, Scanner keyboard, int position,
+                             ArrayList<Salle> plateaux) {
         Request inTheBag = new Request();
-        inTheBag.takeBackPack(aventurier, keyboard);
+        inTheBag.takeBackPack(aventurier, keyboard, position, plateaux);
     }
     /**
      * commande pour quitter la partie

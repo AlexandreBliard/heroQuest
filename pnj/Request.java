@@ -1,9 +1,12 @@
 package com.heroquest.pnj;
 
+import com.heroquest.Menu;
 import com.heroquest.dungeon.Salle;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pj.ValeurExceptions;
 import com.heroquest.stuff.*;
+
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,6 +16,8 @@ import java.util.Scanner;
  * avec la DB
  */
 public class Request {
+
+    private Menu menu = new Menu();
 
     public void addBackPack(ArrayList<Salle> plateaux, int position) {
         String name = plateaux.get(position).getReward().getName();
@@ -33,7 +38,8 @@ public class Request {
         }
     }
 
-    public void takeBackPack(CommunPeople aventurier, Scanner keyboard) {
+    public void takeBackPack(CommunPeople aventurier, Scanner keyboard, int position,
+                             ArrayList<Salle> plateaux) {
         System.out.println("tu as ceci dans ton sac");
         String request = "SELECT name FROM inventory";
         ResultSet result = null;
@@ -56,19 +62,27 @@ public class Request {
                 ResultSet erase = null;
                 switch (input) {
                     case "une épée longue":
+                        if (menu.verifType(aventurier, position, plateaux))
                         aventurier.setAttack(new LongSword());
+                        compare.close();
                         break;
 
                     case "une épée batârde":
+                        if (menu.verifType(aventurier, position, plateaux))
                         aventurier.setAttack(new HalfHandSword());
+                        compare.close();
                         break;
 
                     case "le bâton de boule de feu":
+                        if (menu.verifType(aventurier, position, plateaux))
                         aventurier.setAttack(new FireBall());
+                        compare.close();
                         break;
 
                     case "une baguette de flèche acide de Melf":
+                        if (menu.verifType(aventurier, position, plateaux))
                         aventurier.setAttack(new AcideArrow());
+                        compare.close();
                         break;
 
                     case "potion de soins légers":

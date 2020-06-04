@@ -42,7 +42,7 @@ public class InTheCavern{
                     menu.inspect(aventurier, plateaux, position, keyboard);
                     break;
                 case "sac" :
-                    menu.takeBackPack(aventurier, keyboard);
+                    menu.takeBackPack(aventurier, keyboard, position, plateaux);
                     break;
                 default:
                     System.out.println("petite faute de frappe non ?");
