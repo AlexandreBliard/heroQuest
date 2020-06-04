@@ -28,7 +28,7 @@ public class InTheCavern{
                 case "":
                     position = menu.forward(position);
                     try {
-                        plateaux.get(position);//ici on décrit la pièce
+                        plateaux.get(position);//ici on décrit la Salle
                         System.out.println(plateaux.get(position));
                     } catch (IndexOutOfBoundsException e) {//exception de sortie du jeu
                         System.out.println("tu trouves le sceptre de Feu");
@@ -42,8 +42,7 @@ public class InTheCavern{
                     menu.inspect(aventurier, plateaux, position, keyboard);
                     break;
                 case "sac" :
-                    Request inTheBag = new Request();
-                    inTheBag.takeBackPack(aventurier, keyboard);
+                    menu.takeBackPack(aventurier, keyboard);
                     break;
                 default:
                     System.out.println("petite faute de frappe non ?");

@@ -37,8 +37,8 @@ public class Search {
                                 "\n tape entrée pour continuer");
                     }
                     break;
-                case "potion":
 
+                case "potion":
                     DrinkPotion drink = new DrinkPotion();
                     try {
                         drink.drinkPotion(aventurier, plateaux.get(position).getReward());
@@ -73,7 +73,7 @@ public class Search {
             System.out.println("on le met quand même dans le sac" +
                     "\ntape entrée pour continuer");
             Request inTheBag = new Request();
-            inTheBag.addBackPack( plateaux, position);
+            menu.addBackPack( plateaux, position);
         }
 
     }

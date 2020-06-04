@@ -5,6 +5,7 @@ import com.heroquest.option.Choice;
 import com.heroquest.option.LeaveCavern;
 import com.heroquest.option.OneOptionForGouvernAll;
 import com.heroquest.pj.CommunPeople;
+import com.heroquest.pnj.Request;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -81,6 +82,20 @@ public class Menu {
         search.search(aventurier, plateaux, position, keyboard);
     }
 
+    /**
+     * permet de mettre un objet dans la DB
+     * @param plateaux
+     * @param position
+     */
+    public void addBackPack(ArrayList<Salle> plateaux, int position) {
+        Request inTheBag = new Request();
+        inTheBag.addBackPack(plateaux, position);
+    }
+
+    public void takeBackPack(CommunPeople aventurier, Scanner keyboard) {
+        Request inTheBag = new Request();
+        inTheBag.takeBackPack(aventurier, keyboard);
+    }
     /**
      * commande pour quitter la partie
      * @param aventurier
