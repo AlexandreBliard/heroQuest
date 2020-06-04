@@ -67,6 +67,7 @@ public class InTheCavern{
                                 }
                                 break;
                             case "potion":
+
                                 DrinkPotion drink = new DrinkPotion();
                                     try {
                                         drink.drinkPotion(aventurier, plateaux.get(position).getReward());
@@ -79,31 +80,32 @@ public class InTheCavern{
                                         aventurier.getLife() +
                                         " points de vie");
                                 break;
+
                             case "gold":
-                                System.out.println("tu trouves " + plateaux.get(position).getReward().getPrice() +
+                                System.out.println(" tu trouves " + plateaux.get(position).getReward().getPrice() +
                                         " pièces d'or");
                                 break;
+
                             case "dust":
                             case "trash":
                                 System.out.println(" tu trouves " + plateaux.get(position).getReward().getName());
                                 break;
-                            case "noting":
-                                System.out.println(plateaux.get(position).getReward().getName() + " " +
+
+                            case "nothing":
+                                System.out.println( " you find nothing " +
                                         aventurier.getName() + " Snow") ;
                                 break;
                             default:
                                 System.out.println("une erreur c'est glissé dans le programme");
                         }
                     }else {
-                        System.out.println("on le met quand même dans le sac \n " +
-                                "tape entrée pour continuer");
+                        System.out.println("on le met quand même dans le sac" +
+                                "\ntape entrée pour continuer");
                         Request inTheBag = new Request();
                         inTheBag.addBackPack( plateaux, position);
                     }
-
-
-                    ;
                     break;
+
                 case "sac" :
                     Request inTheBag = new Request();
                     inTheBag.takeBackPack(aventurier, keyboard);
@@ -112,7 +114,7 @@ public class InTheCavern{
                     System.out.println("petite faute de frappe non ?");
                     break;
             }
-        }while (position < plateaux.size());
+        } while (position < plateaux.size());
         System.out.println("Sceptre de Feu acquis");
         System.out.println("voulez-vous rejouer ? " +
                 "oui / non ");

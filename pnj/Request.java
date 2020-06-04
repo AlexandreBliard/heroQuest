@@ -19,7 +19,6 @@ public class Request {
 
     public void addBackPack(ArrayList<Salle> plateaux, int position) {
         String name = plateaux.get(position).getReward().getName();
-        System.out.println(name);
         String request = "INSERT INTO inventory (name) VALUES (" + "'" + name +  "'" + ")";
         try {
             ResultSet result =  DriverManager.getConnection(
