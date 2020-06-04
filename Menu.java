@@ -74,6 +74,13 @@ public class Menu {
         cavern.inTheCavern(aventurier, keyboard, plateaux);
     }
 
+    /*=====COMMANDE_DANS_LA_CAVERNE=====COMMANDE_DANS_LA_CAVERNE=====COMMANDE_DANS_LA_CAVERNE*/
+    public void inspect(CommunPeople aventurier, ArrayList<Salle> plateaux,
+                        int position, Scanner keyboard) {
+        Search search = new Search();
+        search.search(aventurier, plateaux, position, keyboard);
+    }
+
     /**
      * commande pour quitter la partie
      * @param aventurier
