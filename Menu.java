@@ -83,7 +83,17 @@ public class Menu {
     }
 
     /**
-     * permet de mettre un objet dans la DB
+     * fait avancer le personnage
+     * @param position
+     * @return
+     */
+    public Integer forward(int position) {
+        Forward forward = new Forward();
+        return forward.forward(position);
+    }
+
+    /**
+     * permet de mettre un item dans la DB
      * @param plateaux
      * @param position
      */
@@ -92,6 +102,11 @@ public class Menu {
         inTheBag.addBackPack(plateaux, position);
     }
 
+    /**
+     * permet de récupérer un item stocké dans la DB
+     * @param aventurier
+     * @param keyboard
+     */
     public void takeBackPack(CommunPeople aventurier, Scanner keyboard) {
         Request inTheBag = new Request();
         inTheBag.takeBackPack(aventurier, keyboard);
@@ -105,7 +120,7 @@ public class Menu {
         LeaveCavern leave = new LeaveCavern();
         leave.leaveCavern(aventurier, keyboard);
     }
-
+/*======COMMANDE_LOGIQUE======COMMANDE_LOGIQUE======COMMANDE_LOGIQUE======COMMANDE_LOGIQUE*/
     /**
      * quand un booléen est demandé, façon rapide de le faire
      * @param aventurier
@@ -117,14 +132,10 @@ public class Menu {
         return choice.choice(aventurier, keyboard);
     }
 
-    /**
-     * fait avancer le personnage
-     * @param position
-     * @return
-     */
-    public Integer forward(int position) {
-        Forward forward = new Forward();
-        return forward.forward(position);
+    public boolean verifyType(CommunPeople aventurier,
+                              int position,
+                              ArrayList<Salle> plateaux) {
+
     }
 
     /**
