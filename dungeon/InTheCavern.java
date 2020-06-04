@@ -3,13 +3,8 @@ package com.heroquest.dungeon;
 import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pj.ValeurExceptions;
-import com.heroquest.pj.MaxLife;
-import com.heroquest.pnj.Connect;
 import com.heroquest.pnj.Request;
 import com.heroquest.stuff.DrinkPotion;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,7 +20,7 @@ public class InTheCavern{
     private int position = 0;
 
     public void inTheCavern (CommunPeople aventurier, Scanner keyboard,
-                             ArrayList<Salle> plateaux) throws NoSuchFieldException {
+                             ArrayList<Salle> plateaux) {
         Menu menu = new Menu();
         do {
             String input = keyboard.nextLine();

@@ -17,7 +17,7 @@ import java.util.Scanner;
  * l'user de se déplacer dans la caverne
  */
 public class Main {
-    public static void main(String[] args) throws NoSuchFieldException {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         PlayGame start = new PlayGame();
         start.playGame(sc);

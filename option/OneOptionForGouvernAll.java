@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class OneOptionForGouvernAll {
     Menu menu = new Menu();
-    public void chooseSpecialRules(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void chooseSpecialRules(CommunPeople aventurier, Scanner keyboard) {
         ChangeName name = new ChangeName();
         System.out.println("tu invoques les " +
                 "arcanes sacrés. Si tu veux " +

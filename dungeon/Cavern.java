@@ -19,7 +19,7 @@ public class Cavern {
      * @return
      * @throws NoSuchFieldException
      */
-    public ArrayList<Salle> Cavern() throws NoSuchFieldException {
+    public ArrayList<Salle> Cavern()  {
 
         int taillePlateau = 63;
         double fqGobelin = 0.90;

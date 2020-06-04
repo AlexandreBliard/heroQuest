@@ -36,7 +36,7 @@ public class Menu {
      * @param aventurier
      * @param keyboard
      */
-    public void options(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void options(CommunPeople aventurier, Scanner keyboard) {
         OneOptionForGouvernAll options = new OneOptionForGouvernAll();
         options.chooseSpecialRules(aventurier, keyboard);
     }
@@ -47,7 +47,7 @@ public class Menu {
      * @param keyboard
      * @throws NoSuchFieldException
      */
-    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) {
         AtTheEntry enter = new AtTheEntry();
         enter.atTheEntry(aventurier, keyboard);
     }
@@ -56,9 +56,8 @@ public class Menu {
      * commnande pour rentrer dans la caverne
      * @param aventurier
      * @param keyboard
-     * @throws NoSuchFieldException
      */
-    public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         EnterCavern game = new EnterCavern();
         game.enterCavern(aventurier, keyboard);
     }
@@ -68,10 +67,9 @@ public class Menu {
      * @param aventurier
      * @param keyboard
      * @param plateaux
-     * @throws NoSuchFieldException
      */
     public void inTheCavern(CommunPeople aventurier, Scanner keyboard,
-                            ArrayList<Salle> plateaux) throws NoSuchFieldException {
+                            ArrayList<Salle> plateaux)  {
         InTheCavern cavern = new InTheCavern();
         cavern.inTheCavern(aventurier, keyboard, plateaux);
     }
@@ -112,7 +110,7 @@ public class Menu {
      * @return
      * @throws NoSuchFieldException
      */
-    public ArrayList<Salle> Cavern() throws NoSuchFieldException {
+    public ArrayList<Salle> Cavern() {
         Cavern cavern = new Cavern();
         return cavern.Cavern();
     }
@@ -122,7 +120,7 @@ public class Menu {
      * @param keyboard
      * @throws NoSuchFieldException
      */
-    public void startGame(Scanner keyboard) throws NoSuchFieldException {
+    public void startGame(Scanner keyboard) {
         PlayGame game = new PlayGame();
         game.playGame(keyboard);
     }
