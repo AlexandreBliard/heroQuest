@@ -18,7 +18,7 @@ public class AtTheEntry {
 
     Menu menu = new Menu();
 
-    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("te voilà donc " +
                 "prêt à pénétrer dans la " +
                 "caverne qui se trouve " +

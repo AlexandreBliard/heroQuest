@@ -18,7 +18,7 @@ public class EnterCavern {
     public EnterCavern() {
     }
 
-    public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         Menu menu = new Menu();
         String input = keyboard.nextLine();
         System.out.println("vous êtes dans la caverne,\n " +
@@ -32,7 +32,7 @@ public class EnterCavern {
                 "perdu tape arcanes sacrés'" +
                 "\nAppuyer sur entrée pour " +
                 "faire avancer votre personnage");
-        ArrayList plateaux = menu.Cavern(); //création de la caverne
+        ArrayList <Salle> plateaux = menu.Cavern(); //création de la caverne
         if (input.equals("")) {
             menu.inTheCavern(aventurier, keyboard, plateaux);
         }else {

@@ -5,6 +5,7 @@ import com.heroquest.option.Choice;
 import com.heroquest.option.LeaveCavern;
 import com.heroquest.option.OneOptionForGouvernAll;
 import com.heroquest.pj.CommunPeople;
+import com.heroquest.pnj.Request;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -36,7 +37,7 @@ public class Menu {
      * @param aventurier
      * @param keyboard
      */
-    public void options(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void options(CommunPeople aventurier, Scanner keyboard) {
         OneOptionForGouvernAll options = new OneOptionForGouvernAll();
         options.chooseSpecialRules(aventurier, keyboard);
     }
@@ -47,7 +48,7 @@ public class Menu {
      * @param keyboard
      * @throws NoSuchFieldException
      */
-    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void atTheEntry(CommunPeople aventurier, Scanner keyboard) {
         AtTheEntry enter = new AtTheEntry();
         enter.atTheEntry(aventurier, keyboard);
     }
@@ -56,9 +57,8 @@ public class Menu {
      * commnande pour rentrer dans la caverne
      * @param aventurier
      * @param keyboard
-     * @throws NoSuchFieldException
      */
-    public void enterCavern(CommunPeople aventurier, Scanner keyboard) throws NoSuchFieldException {
+    public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         EnterCavern game = new EnterCavern();
         game.enterCavern(aventurier, keyboard);
     }
@@ -68,33 +68,18 @@ public class Menu {
      * @param aventurier
      * @param keyboard
      * @param plateaux
-     * @throws NoSuchFieldException
      */
     public void inTheCavern(CommunPeople aventurier, Scanner keyboard,
-                            ArrayList<Salle> plateaux) throws NoSuchFieldException {
+                            ArrayList<Salle> plateaux)  {
         InTheCavern cavern = new InTheCavern();
         cavern.inTheCavern(aventurier, keyboard, plateaux);
     }
 
-    /**
-     * commande pour quitter la partie
-     * @param aventurier
-     * @param keyboard
-     */
-    public void leaveCavern(CommunPeople aventurier, Scanner keyboard) {
-        LeaveCavern leave = new LeaveCavern();
-        leave.leaveCavern(aventurier, keyboard);
-    }
-
-    /**
-     * quand un booléen est demandé, façon rapide de le faire
-     * @param aventurier
-     * @param keyboard
-     * @return
-     */
-    public boolean choice(CommunPeople aventurier, Scanner keyboard) {
-        Choice choice = new Choice();
-        return choice.choice(aventurier, keyboard);
+    /*=====COMMANDE_DANS_LA_CAVERNE=====COMMANDE_DANS_LA_CAVERNE=====COMMANDE_DANS_LA_CAVERNE*/
+    public void inspect(CommunPeople aventurier, ArrayList<Salle> plateaux,
+                        int position, Scanner keyboard) {
+        Search search = new Search();
+        search.search(aventurier, plateaux, position, keyboard);
     }
 
     /**
@@ -108,11 +93,57 @@ public class Menu {
     }
 
     /**
+     * permet de mettre un item dans la DB
+     * @param plateaux
+     * @param position
+     */
+    public void addBackPack(ArrayList<Salle> plateaux, int position) {
+        Request inTheBag = new Request();
+        inTheBag.addBackPack(plateaux, position);
+    }
+
+    /**
+     * permet de récupérer un item stocké dans la DB
+     * @param aventurier
+     * @param keyboard
+     */
+    public void takeBackPack(CommunPeople aventurier, Scanner keyboard) {
+        Request inTheBag = new Request();
+        inTheBag.takeBackPack(aventurier, keyboard);
+    }
+    /**
+     * commande pour quitter la partie
+     * @param aventurier
+     * @param keyboard
+     */
+    public void leaveCavern(CommunPeople aventurier, Scanner keyboard) {
+        LeaveCavern leave = new LeaveCavern();
+        leave.leaveCavern(aventurier, keyboard);
+    }
+/*======COMMANDE_LOGIQUE======COMMANDE_LOGIQUE======COMMANDE_LOGIQUE======COMMANDE_LOGIQUE*/
+    /**
+     * quand un booléen est demandé, façon rapide de le faire
+     * @param aventurier
+     * @param keyboard
+     * @return
+     */
+    public boolean choice(CommunPeople aventurier, Scanner keyboard) {
+        Choice choice = new Choice();
+        return choice.choice(aventurier, keyboard);
+    }
+
+    public boolean verifyType(CommunPeople aventurier,
+                              int position,
+                              ArrayList<Salle> plateaux) {
+
+    }
+
+    /**
      * création du plateau de jeu qui s'appelle caverne
      * @return
      * @throws NoSuchFieldException
      */
-    public ArrayList<Salle> Cavern() throws NoSuchFieldException {
+    public ArrayList<Salle> Cavern() {
         Cavern cavern = new Cavern();
         return cavern.Cavern();
     }
@@ -122,7 +153,7 @@ public class Menu {
      * @param keyboard
      * @throws NoSuchFieldException
      */
-    public void startGame(Scanner keyboard) throws NoSuchFieldException {
+    public void startGame(Scanner keyboard) {
         PlayGame game = new PlayGame();
         game.playGame(keyboard);
     }

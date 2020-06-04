@@ -19,7 +19,7 @@ public class Cavern {
      * @return
      * @throws NoSuchFieldException
      */
-    public ArrayList<Salle> Cavern() throws NoSuchFieldException {
+    public ArrayList<Salle> Cavern()  {
 
         int taillePlateau = 63;
         double fqGobelin = 0.90;
@@ -35,7 +35,7 @@ public class Cavern {
         CommunPeople dragon = new Dragon();
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<=taillePlateau; i++) {//boucle créations du plateaux
-            Salle salle = new Salle(texte.description());//salle avec description & loot aléatoire et sans ennemi
+            Salle salle = new Salle(texte.description(), loot.reward());//salle avec description & loot aléatoire et sans ennemi
             plateaux.add(salle);
             if (i == taillePlateau) {
                 int randomIndexPlateau = 0;

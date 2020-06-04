@@ -14,7 +14,7 @@ import java.util.Scanner;
  * une fois le keyboard.
  */
 public class PlayGame {
-    public void playGame(Scanner keyboard) throws NoSuchFieldException {
+    public void playGame(Scanner keyboard)  {
         Menu menu = new Menu();
         CommunPeople aventurier = menu.chooseYouCharacter(keyboard);
         menu.atTheEntry(aventurier, keyboard);

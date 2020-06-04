@@ -8,7 +8,7 @@ public class AddRandomMonster {
     public void addRandomMonster(int nbMonstres, DescriptionSalle texte, RandomReward loot,
                                  CommunPeople ennemy, int randomIndexPlateau,
                                  RandomNumber randomNumber, ArrayList<Salle> plateaux,
-                                 int taillePlateau, double fq) throws NoSuchFieldException {
+                                 int taillePlateau, double fq) {
         for (int i = 0; i< nbMonstres; i++) {
             Salle salle = new Salle(texte.description(), ennemy, loot.reward());
             randomIndexPlateau = (int) randomNumber.RandomNumber(taillePlateau, fq);
