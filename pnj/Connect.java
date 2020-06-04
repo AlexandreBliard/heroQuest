@@ -11,27 +11,44 @@ import java.sql.Statement;
  */
 public class Connect {
 
-    public Statement connect() {
-        try {
-            Class.forName("org.mariadb.jdbc.Driver");
-            System.out.println("Driver O.K.");
+    private Connection connection;
+    private static Connect instance;
 
-            String url = "jdbc:mariadb://localhost:3306/backPack";
-            String user = "root";
-            String passwd = "";
+    /*GETTER======GETTER======GETTER======GETTER======GETTER======GETTER======
+    * */
 
-            Connection conn = DriverManager.getConnection(url, user, passwd);
-            Statement state = conn.createStatement();
-            ResultSet result = state.executeQuery("");
-            System.out.println("Connexion effective !");
-
-        } catch (Exception e) {
-            System.out.println("erreur connexion DB");
-            e.printStackTrace();
+    public static Connect getInstance() {
+        if (instance == null) {
+            instance = new Connect();
         }
-        return null;
+        return instance;
     }
 
+    public Connection getConnection() {
+        if (connection == null) {
+            try {
+                Class.forName("org.mariadb.jdbc.Driver");
+                System.out.println("Driver O.K.");
+
+                String url = "jdbc:mariadb://localhost:3306/backPack";
+                String user = "root";
+                String passwd = "";
+
+                connection = DriverManager.getConnection(url, user, passwd);
+
+            } catch (Exception e) {
+                System.out.println("erreur connexion DB");
+                e.printStackTrace();
+            }
+        }
+        return connection;
+    }
+
+    /*CONSTRUCTEUR===========CONSTRUCTEUR===========CONSTRUCTEUR===========CONSTRUCTEUR===========*/
+
+    private Connect() {
+
+    }
 
     /*
     * réflexion sur l'accès à DB

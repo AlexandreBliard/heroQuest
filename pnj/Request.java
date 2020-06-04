@@ -20,13 +20,19 @@ public class Request {
     public void addBackPack(ArrayList<Salle> plateaux, int position) {
         String name = plateaux.get(position).getReward().getName();
         String request = "INSERT INTO inventory (name) VALUES (" + "'" + name +  "'" + ")";
+        ResultSet result = null;
         try {
-            ResultSet result =  DriverManager.getConnection(
-                    "jdbc:mariadb://localhost:3306/backPack", "root", "")
-                    .createStatement().executeQuery(request);
+            result = Connect.getInstance().getConnection().createStatement().executeQuery(request);
+
         } catch (SQLException throwables) {
             System.out.println("erreur d'ajout");
             throwables.printStackTrace();
+        } finally {
+            try {
+                result.close();
+            } catch (Exception throwables) {
+                throwables.printStackTrace();
+            }
         }
     }
 
