@@ -5,7 +5,7 @@ import com.heroquest.stuff.Loot;
 
 public class Warrior extends CommunPeople implements MaxLife{
 
-
+    private int maxLife;
 
     public Warrior(String type, String name, int life, int lifeByLevel, int level, Loot loot) {
         super(type, name, life, lifeByLevel, level, loot);
@@ -20,7 +20,17 @@ public class Warrior extends CommunPeople implements MaxLife{
     }
 
 
-/*à l'occase il serait pratique de voir si
-    interface permet de gérer
-* le stuff du PJ*/
+
+    @Override
+    public int maxLife(int level, int lifeByLevel) {
+        return level*lifeByLevel;
+    }
+
+    public int getMaxLife() {
+        return maxLife;
+    }
+
+    public void setMaxLife() {
+        this.maxLife = maxLife(level, lifeByLevel);
+    }
 }

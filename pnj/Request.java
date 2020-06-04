@@ -77,7 +77,7 @@ public class Request {
                         try {
                             DP.drinkPotion(aventurier, new PotionLow());
                         } catch (ValeurExceptions valeurExceptions) {
-                            aventurier.setLife(MaxLife.maxLife(aventurier.getLevel(), aventurier.getLifeByLevel()));
+                            aventurier.setLife((aventurier.getLevel() * aventurier.getLifeByLevel()));
                         }
                         break;
 

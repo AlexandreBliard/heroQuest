@@ -72,7 +72,7 @@ public class InTheCavern{
                                     try {
                                         drink.drinkPotion(aventurier, plateaux.get(position).getReward());
                                     } catch (ValeurExceptions e) {
-                                        aventurier.setLife(MaxLife.maxLife(aventurier.getLevel(), aventurier.getLifeByLevel()));
+                                        aventurier.setLife((aventurier.getLevel() * aventurier.getLifeByLevel()));
                                     }
                                 System.out.println("Tu as bu " +
                                         plateaux.get(position).getReward().getName() +
