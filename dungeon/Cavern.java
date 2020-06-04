@@ -35,7 +35,7 @@ public class Cavern {
         CommunPeople dragon = new Dragon();
         ArrayList<Salle> plateaux = new ArrayList<Salle>(taillePlateau);
         for (int i = 0; i<=taillePlateau; i++) {//boucle créations du plateaux
-            Salle salle = new Salle(texte.description());//salle avec description & loot aléatoire et sans ennemi
+            Salle salle = new Salle(texte.description(), loot.reward());//salle avec description & loot aléatoire et sans ennemi
             plateaux.add(salle);
             if (i == taillePlateau) {
                 int randomIndexPlateau = 0;

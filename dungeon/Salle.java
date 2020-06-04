@@ -47,10 +47,10 @@ public class Salle {
     }
 /*constructeur pour la création des cases avec descriptions et récompenses
 * et sans monstres*/
-    public Salle(String description) {
+    public Salle(String description, Loot reward) {
         this.description = description;
         this.ennemis = new NoOne();
-        this.reward = new PotionLow();
+        this.reward = reward;
     }
 
 
