@@ -21,8 +21,7 @@ public class Search {
         if (menu.choice(aventurier, keyboard)) {
             switch (plateaux.get(position).getReward().getType()) {
                 case "weapon":
-                    if (plateaux.get(position).getReward().getPour().equals(aventurier.getType())) {
-                        /*le if vérifie si l'arme est bien pour cet aventurier*/
+                    if (menu.verifType(aventurier, position, plateaux)) {
                         aventurier.setAttack(plateaux.get(position).getReward());
                         System.out.println("tu as équipé " +
                                 aventurier.getAttack().getName() +

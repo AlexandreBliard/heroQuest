@@ -28,7 +28,6 @@ public class Connect {
         if (connection == null) {
             try {
                 Class.forName("org.mariadb.jdbc.Driver");
-                System.out.println("Driver O.K.");
 
                 String url = "jdbc:mariadb://localhost:3306/backPack";
                 String user = "root";

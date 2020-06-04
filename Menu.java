@@ -132,10 +132,11 @@ public class Menu {
         return choice.choice(aventurier, keyboard);
     }
 
-    public boolean verifyType(CommunPeople aventurier,
+    public boolean verifType(CommunPeople aventurier,
                               int position,
                               ArrayList<Salle> plateaux) {
-
+        Verify type = new Verify();
+        return type.verifyType(aventurier, position, plateaux);
     }
 
     /**

@@ -2,11 +2,8 @@ package com.heroquest.pnj;
 
 import com.heroquest.dungeon.Salle;
 import com.heroquest.pj.CommunPeople;
-import com.heroquest.pj.MaxLife;
 import com.heroquest.pj.ValeurExceptions;
 import com.heroquest.stuff.*;
-
-import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -39,24 +36,24 @@ public class Request {
     public void takeBackPack(CommunPeople aventurier, Scanner keyboard) {
         System.out.println("tu as ceci dans ton sac");
         String request = "SELECT name FROM inventory";
+        ResultSet result = null;
+        ResultSet compare = null;
         try {
-            ResultSet results = DriverManager.getConnection(
-                    "jdbc:mariadb://localhost:3306/backPack", "root", "")
-                    .createStatement().executeQuery(request);
-            ResultSetMetaData rsmd = results.getMetaData();
-            while(results.next()){
+            result = Connect.getInstance().getConnection().
+                    createStatement().executeQuery(request);
+            ResultSetMetaData rsmd = result.getMetaData();
+            while(result.next()){
                 for (int i = 1 ; i <= rsmd.getColumnCount(); i++) {
-                    System.out.println(results.getObject(i).toString());
+                    System.out.println(result.getObject(i).toString());
                 }
             }
-            results.close();
+            result.close();
             System.out.println("que veux-tu prendre ?");
             String input = keyboard.nextLine();
-            ResultSet compare = DriverManager.getConnection(
-                    "jdbc:mariadb://localhost:3306/backPack", "root", "")
-                    .createStatement().executeQuery("SELECT name FROM inventory " +
-                            "WHERE name = '" +input+ "'");
+            compare = Connect.getInstance().getConnection().createStatement().executeQuery("SELECT name FROM inventory " +
+                    "WHERE name = '" +input+ "'");
             if (compare.next()) {
+                ResultSet erase = null;
                 switch (input) {
                     case "une épée longue":
                         aventurier.setAttack(new LongSword());
@@ -76,31 +73,37 @@ public class Request {
 
                     case "potion de soins légers":
                         DrinkPotion DP = new DrinkPotion();
-                        ResultSet erase = DriverManager.getConnection(
-                                "jdbc:mariadb://localhost:3306/backPack", "root", "")
+                        erase = Connect.getInstance().getConnection()
                                 .createStatement().executeQuery("DELETE FROM inventory " +
                                         "WHERE name = '" +input+ "'");
                         try {
                             DP.drinkPotion(aventurier, new PotionLow());
                         } catch (ValeurExceptions valeurExceptions) {
                             aventurier.setLife((aventurier.getLevel() * aventurier.getLifeByLevel()));
+                        }finally {
+                            erase.close();
                         }
+                        compare.close();
                         break;
 
                     case "'You find nothing Jhon Snow'":
                         System.out.println("c'était juste pour le ;-)");
+                        compare.close();
                         break;
 
                     case "juste de la poussière" :
                         System.out.println("pas assez pour lui piquer les yeux");
+                        compare.close();
                         break;
 
                     case  "juste des ordures" :
                         System.out.println("on pourrait croire à des boucles d'oreille");
+                        compare.close();
                         break;
 
                     default:
                         System.out.println("erreur de code");
+                        compare.close();
 
                 }
                 System.out.println("tu l'équipes");
@@ -110,6 +113,13 @@ public class Request {
         }catch (SQLException throwables) {
             System.out.println("erreur de recherche");
             throwables.printStackTrace();
+        }finally {
+            try {
+                result.close();
+                compare.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
     }
