@@ -12,16 +12,20 @@ public abstract class CommunPeople{
     protected int lifeByLevel;
     protected int level;
     protected Loot attack;
+    protected int xp;
+    protected int gold;
 
 /*--------- CONSTRUCTEURS  CONSTRUCTEURS   CONSTRUCTEURS ------------*/
 
-    public CommunPeople(String type, String name, int life, int lifeByLevel, int level, Loot loot) {
+    public CommunPeople(String type, String name, int life, int lifeByLevel, int level, Loot loot, int xp, int gold) {
         this.type = type;
         this.name = name;
         this.life = life;
         this.lifeByLevel = lifeByLevel;
         this.level = level;
         this.attack = loot;
+        this.xp = xp;
+        this.gold = gold;
     }
 
     /*---------les SETTERS sont ici ------------*/
@@ -48,7 +52,9 @@ public abstract class CommunPeople{
                 " avec " + life + " points de vie, "
                 + "\n" + "tu possèdes " + this.attack.getName() + " qui " +
                 "occasionne " + this.attack.getDamage() + " points " +
-                "de dégâts";
+                "de dégâts" +
+                "\n"+ "tu as " + xp + " points d'expérience " +
+                "et " + gold + " pièces d'or";
     /*this.attack = Cweapons et j'ai besoin de Cweapons mais
     * n'existe pas à ce moment là, c'est une relation de
     * Schale inversé*/
