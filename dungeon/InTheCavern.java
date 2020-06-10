@@ -6,11 +6,8 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Cette méthode est très longue et va faire l'objet d'un réfactor dans
- * pas longtemps : elle gère le lancer de dés, la position du joueur
- * dans la caverne, ce qu'il y a dans la Salle, l'interaction avec
- * celle-ci et bientôt les combats
- * elle est également en lien avec les règles spéciales
+ * Cette classe permet de gérer le choix du joueur, son
+ * avancé dans la caverne, de vérifier ce que contient son sac
  */
 public class InTheCavern{
 
