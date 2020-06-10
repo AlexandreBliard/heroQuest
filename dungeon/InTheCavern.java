@@ -2,9 +2,6 @@ package com.heroquest.dungeon;
 
 import com.heroquest.Menu;
 import com.heroquest.pj.CommunPeople;
-import com.heroquest.pj.ValeurExceptions;
-import com.heroquest.pnj.Request;
-import com.heroquest.stuff.DrinkPotion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
