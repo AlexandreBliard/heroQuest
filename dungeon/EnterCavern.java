@@ -20,7 +20,6 @@ public class EnterCavern {
 
     public void enterCavern(CommunPeople aventurier, Scanner keyboard) {
         Menu menu = new Menu();
-        String input = keyboard.nextLine();
         System.out.println("vous êtes dans la caverne,\n " +
                 "vous voyez un long couloir sombre " +
                 "que la clarté de l'extérieur " +
@@ -32,14 +31,8 @@ public class EnterCavern {
                 "perdu tape arcanes sacrés'" +
                 "\nAppuyer sur entrée pour " +
                 "faire avancer votre personnage");
-        ArrayList <Salle> plateaux = menu.Cavern(); //création de la caverne
-        if (input.equals("")) {
-            menu.inTheCavern(aventurier, keyboard, plateaux);
-        }else {
-            System.out.println("je ne suis pas" +
-                    "sur d'avoir compris");
-        }
-
-
+        ArrayList <Salle> plateaux = menu.cavern(); //création de la caverne
+        keyboard.nextLine();
+        menu.inTheCavern(aventurier, keyboard, plateaux);
     }
 }

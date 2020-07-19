@@ -37,7 +37,7 @@ public abstract class Loot {
 
 /* ----------toSTRING  toSTRING  toSTRING  ---------   */
     public String toString() {
-        return "tu a équipé " + name +
-                " tu fais " + damage + " points de degâts ";
+        return "tu as équipé " + name +
+                " tu fais " + damage + " points de dégâts ";
     }
 }

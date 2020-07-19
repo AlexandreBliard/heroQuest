@@ -145,9 +145,9 @@ public class Menu {
      * @return
      * @throws NoSuchFieldException
      */
-    public ArrayList<Salle> Cavern() {
+    public ArrayList<Salle> cavern() {
         Cavern cavern = new Cavern();
-        return cavern.Cavern();
+        return cavern.salles();
     }
 
     /**

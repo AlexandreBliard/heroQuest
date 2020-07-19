@@ -3,6 +3,8 @@ package com.heroquest;
 import com.heroquest.pj.CommunPeople;
 import com.heroquest.pj.Warrior;
 import com.heroquest.pj.Wizard;
+
+
 import com.heroquest.pnj.NoOne;
 
 import java.util.Scanner;
